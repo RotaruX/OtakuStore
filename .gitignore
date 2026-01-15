@@ -1,0 +1,24 @@
+# --- Configuración de Base de Datos (SEGURIDAD) ---
+# No subimos las credenciales reales para que nadie vea nuestra contraseña de la DB en GitHub
+config/db.php
+
+# --- Archivos del Sistema Operativo ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Archivos de XAMPP / Temporales ---
+*.log
+*.tmp
+*.sql
+
+# --- Recursos subidos por usuarios ---
+# Es mejor no subir las fotos que vayas probando en local
+# para mantener el repositorio limpio.
+uploads/productos/*
+!uploads/productos/.gitkeep
+
+# --- IDEs / Editores de código ---
+.vscode/
+.idea/
+nbproject/
