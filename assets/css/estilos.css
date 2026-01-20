@@ -54,14 +54,31 @@ header > a >  img{
     justify-content: space-around;
 }
 
-main{
-    height: auto;
-}
-
 footer{
     width: 100%;
-    height: 10vh;
+    height: 20vh;
     background-color: #FF8FAB;
     color: white;
-    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer > div{
+    width: 33%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.legal > ul, .paginas > ul{
+    list-style: none;
+}
+
+.legal > ul >li > a, .paginas > ul >li > a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 10px;
 }
