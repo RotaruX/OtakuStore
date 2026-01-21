@@ -66,7 +66,7 @@ footer{
 
 footer > div{
     width: 33%;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -81,4 +81,8 @@ footer > div{
     color: white;
     text-transform: uppercase;
     padding: 10px;
+}
+
+.legal > h2, .redes > h2, .paginas > h2{
+    margin-bottom: 20px;
 }
