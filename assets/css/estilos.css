@@ -39,6 +39,13 @@ header > a >  img{
     padding: 10px;
 }
 
+.menu > ul > li > a.activo {
+    background-color: #f87e9d;
+    color: black;
+    border-radius: 20px;
+}
+
+
 .menu > ul >li > a:hover{
     background-color: #f87e9d;
     border-radius: 20px;
