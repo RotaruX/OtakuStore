@@ -23,6 +23,6 @@
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-linkedin"></i>
         </section>
-    </footer>
+    </footer>  
 </body>
 </html>

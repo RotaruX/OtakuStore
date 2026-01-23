@@ -1,7 +1,9 @@
 <?php require_once ("includes/header.php") ?>
 
 <main>
-    <h1>Aqui va el main</h1>
+    <section class="carrusel">
+        <h1>¡BIENVENIDO A OTAKUSTORE, TU TIENDA ONLINE DE CONFIANZA!</h1>
+    </section>
 </main>
 
 <?php require_once("includes/footer.php") ?>

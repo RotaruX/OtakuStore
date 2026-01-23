@@ -9,21 +9,21 @@
     <?php
         $paginaActual = basename($_SERVER['PHP_SELF']);
         if($paginaActual == 'index.php'):?>
-    <link rel="stylesheet" href="assets/css/incio.css">
+    <link rel="stylesheet" href="./assets/css/inicio.css">
     <?php
         elseif($paginaActual == 'tienda.php'):?>
-        <link rel="stylesheet" href="assets/css/tienda.css">
+        <link rel="stylesheet" href="./assets/css/tienda.css">
     <?php
         elseif($paginaActual == 'contacto.php'):?>
-    <link rel="stylesheet" href="assets/css/contacto.css">
+    <link rel="stylesheet" href="./assets/css/contacto.css">
     <?php
         elseif($paginaActual == 'ferias.php'):?>
-    <link rel="stylesheet" href="assets/css/ferias.css">
+    <link rel="stylesheet" href="./assets/css/ferias.css">
     <?php endif;?>
 </head>
 <body>
     <header>
-        <a href="index.php"><img src="assets/img/Logo.png"></a>
+        <a href="index.php"><img src="./assets/img/Logo.png"></a>
 
         <section class="menu">
             <ul>
@@ -34,7 +34,7 @@
             </ul>
             <section class="usuarios">
                 <i class="fa-solid fa-user"></i>
-                <i class="fa-solid fa-cart-plus"></i>
+                <a href="./carrito.php"><i class="fa-solid fa-cart-plus"></i></a>
             </section>
         </section>
     </header>

@@ -1,0 +1,40 @@
+.carrusel{
+    width: 100%;
+    height: 50vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    animation: carruselFondo 15s infinite ease-in-out;
+}
+
+@keyframes carruselFondo {
+    0% {
+        background-image:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../img/carrusel_1.png");
+    }
+    33% {
+        background-image:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../img/carrusel_2.png");
+    }
+    66% {
+        background-image:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../img/carrusel_3.png");
+    }
+    100% {
+        background-image:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("../img/carrusel_4.png");
+    }
+}
+
+.carrusel h1{
+    width: 60%;
+    font-size: 2.5rem;
+}

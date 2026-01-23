@@ -2,7 +2,14 @@
     margin: 0;
     padding: 0;
 }
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Rubik/Rubik-VariableFont_wght.ttf");
+}
 
+h1, h2, h3, h4, h5, h6{
+    font-family: "Poppins";
+}
 header{
     display: flex;
     align-items: center;
@@ -59,6 +66,11 @@ header > a >  img{
     font-size: 25px;
     display: flex;
     justify-content: space-around;
+}
+
+.usuario  a{
+    text-decoration: none;
+    color: white;
 }
 
 footer{
