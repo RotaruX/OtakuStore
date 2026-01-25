@@ -2,7 +2,10 @@
 
 <main>
     <section class="carrusel">
-        <h1>¡BIENVENIDO A OTAKUSTORE, TU TIENDA ONLINE DE CONFIANZA!</h1>
+        <div class="bienvenida">
+            <h1>¡BIENVENIDO A OTAKUSTORE, TU TIENDA ONLINE DE CONFIANZA!</h1>
+            <a href="./tienda.php"><button>VER TIENDA</button></a>
+        </div>
     </section>
 </main>
 

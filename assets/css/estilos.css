@@ -7,6 +7,10 @@
     src: url("../fonts/Rubik/Rubik-VariableFont_wght.ttf");
 }
 
+body{
+    font-family: "Poppins";
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: "Poppins";
 }
@@ -16,8 +20,8 @@ header{
     justify-content: space-between;
     width: 100%;
     height: 10vh;
-    background-color: #FF8FAB;
-    color: white;
+    background-color: #E6B93C;
+    color: #212529;
     font-size: 20px;
 }
 
@@ -41,20 +45,20 @@ header > a >  img{
 
 .menu > ul >li > a{
     text-decoration: none;
-    color: white;
+    color: #212529;
     text-transform: uppercase;
     padding: 10px;
 }
 
 .menu > ul > li > a.activo {
-    background-color: #f87e9d;
-    color: black;
+    background-color: #FFD447;
+    color: #212529;
     border-radius: 20px;
 }
 
 
 .menu > ul >li > a:hover{
-    background-color: #f87e9d;
+    background-color: #FFD447;
     border-radius: 20px;
     padding: 10px;
     color: white;
@@ -68,7 +72,7 @@ header > a >  img{
     justify-content: space-around;
 }
 
-.usuario  a{
+.usuario  a i{
     text-decoration: none;
     color: white;
 }
@@ -76,7 +80,7 @@ header > a >  img{
 footer{
     width: 100%;
     height: 20vh;
-    background-color: #FF8FAB;
+    background-color: #E6B93C;
     color: white;
     display: flex;
     justify-content: space-around;
