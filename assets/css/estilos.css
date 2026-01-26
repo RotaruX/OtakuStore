@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Poppins";
 }
 @font-face {
     font-family: "Poppins";
@@ -11,17 +12,14 @@ body{
     font-family: "Poppins";
 }
 
-h1, h2, h3, h4, h5, h6{
-    font-family: "Poppins";
-}
 header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     height: 10vh;
-    background-color: #E6B93C;
-    color: #212529;
+    background-color: #FFD447;
+    color: white;
     font-size: 20px;
 }
 
@@ -45,20 +43,20 @@ header > a >  img{
 
 .menu > ul >li > a{
     text-decoration: none;
-    color: #212529;
+    color: white;
     text-transform: uppercase;
     padding: 10px;
 }
 
-.menu > ul > li > a.activo {
-    background-color: #FFD447;
-    color: #212529;
+header > section > ul > li > a.activo {
+    color: black;
+    font-weight: bold;
     border-radius: 20px;
 }
 
 
 .menu > ul >li > a:hover{
-    background-color: #FFD447;
+    background-color: #E6B93C;
     border-radius: 20px;
     padding: 10px;
     color: white;
@@ -72,7 +70,7 @@ header > a >  img{
     justify-content: space-around;
 }
 
-.usuario  a i{
+.usuarios > a{
     text-decoration: none;
     color: white;
 }
@@ -80,32 +78,26 @@ header > a >  img{
 footer{
     width: 100%;
     height: 20vh;
-    background-color: #E6B93C;
+    background-color: #FFD447;
     color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-footer > div{
-    width: 33%;
-    text-align: left;
+footer > section{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: start;
+    gap: 10px;
 }
 
-.legal > ul, .paginas > ul{
-    list-style: none;
-}
-
-.legal > ul >li > a, .paginas > ul >li > a{
+section > p > a{
     text-decoration: none;
     color: white;
     text-transform: uppercase;
-    padding: 10px;
 }
 
-.legal > h2, .redes > h2, .paginas > h2{
-    margin-bottom: 20px;
+section > p > a:hover{
+    color: black;
 }

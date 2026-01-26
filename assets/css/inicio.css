@@ -48,19 +48,25 @@
 }
 
 .bienvenida > a > button{
+    font-size: 1.2rem;
     padding: 20px;
     border-radius: 20px;
     background-color: #FFD447;
+    color: black;
+    font-weight: bold;
     border: none;
+}
 
+.bienvenida > a{
+    color: white;
 }
 
 .bienvenida > a > button:hover{
     background-color: #E6B93C;
 }
 
+
 .bienvenida > a{
     text-decoration: none;
     color: white;
-
 }

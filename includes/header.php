@@ -33,7 +33,7 @@
                 <li><a href="ferias.php" class="<?= $paginaActual == 'ferias.php' ? 'activo' : '' ?>">Ferias</a></li>
             </ul>
             <section class="usuarios">
-                <i class="fa-solid fa-user"></i>
+                <a href="./login.php"><i class="fa-solid fa-user"></i></a>
                 <a href="./carrito.php"><i class="fa-solid fa-cart-plus"></i></a>
             </section>
         </section>
