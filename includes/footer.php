@@ -1,26 +1,24 @@
-    <footer>
-        <section>
-            <h2>Legalidad</h2>
-            <p><a href="./legal/aviso_legal.html">Aviso Legal</a></p>
-            <p><a href="./legal/politica_cookies.html">Politica de Cookies</a></p>
-            <p><a href="./legal/politica_privacidad.html">Aviso Legal</a></p>
+    <footer class="main-footer">
+        <section class="footer-links">
+            <h4>Enlaces</h4>
+            <a href="./legal/aviso_legal.html">Aviso Legal</a>
+            <a href="./legal/politica_cookies.html">Política de Cookies</a>
+            <a href="./legal/politica_privacidad.html">Contacto</a>
         </section>
 
-        <section>
-            <h2>Páginas</h2>
-            <p><a href="./index.php">Inicio</a></p>
-            <p><a href="./tienda.php">Tienda</a></p>
-            <p><a href="./ferias.php">Ferias</a></p>
-            <p><a href="./contacto.php">Contactanos</a></p>
-        </section>
-
-        <section>
-            <h2>Redes Sociales</h2>
-            <div class="redes">
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-linkedin"></i>
+        <section class="footer-social">
+            <h4>Síguenos</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a> <a href="#"><i class="fa-brands fa-tiktok"></i></a>
             </div>
         </section>
-    </footer>  
-</body>
-</html>
+
+        <section class="footer-copy">
+            <p>&copy; <?= date('Y') ?> OtakuStore</p>
+            <p>Hecho con 🍜 por Alexandru</p>
+        </section>
+    </footer>
+    </body>
+
+    </html>

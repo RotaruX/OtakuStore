@@ -7,7 +7,7 @@
     flex-direction: column;
     text-align: center;
     background-size: cover;
-    background-position: center;
+    background-position:30%;
     animation: carruselFondo 15s infinite ease-in-out;
 }
 
@@ -69,4 +69,22 @@
 .bienvenida > a{
     text-decoration: none;
     color: white;
+}
+
+/*Responsive movil*/
+@media screen and (max-width: 600px) {
+    .bienvenida{
+        justify-content: center;
+        width: 100%;
+    }
+
+    .bienvenida > h1{
+        font-size: 1.5rem;
+        width: 90%;
+    }
+
+    .bienvenida > a > button{
+        font-size: 1rem;
+        padding: 10px;
+    }
 }

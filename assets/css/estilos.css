@@ -88,16 +88,17 @@ footer{
 footer > section{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
+    text-align: center;
     gap: 10px;
 }
 
-section > p > a{
+footer > section > p > a{
     text-decoration: none;
     color: white;
     text-transform: uppercase;
 }
 
-section > p > a:hover{
+footer > section > p > a:hover{
     color: black;
 }
