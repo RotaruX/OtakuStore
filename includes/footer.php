@@ -19,6 +19,8 @@
             <p>Hecho con 🍜 por Alexandru</p>
         </section>
     </footer>
+
+    <script src="assets/js/menu.js"></script>
     </body>
 
     </html>
