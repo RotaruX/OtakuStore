@@ -73,18 +73,22 @@
 
 /*Responsive movil*/
 @media screen and (max-width: 600px) {
+    .carrusel{
+        height: 70vh;
+    }
+
     .bienvenida{
         justify-content: center;
         width: 100%;
     }
 
     .bienvenida > h1{
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         width: 90%;
     }
 
     .bienvenida > a > button{
         font-size: 1rem;
-        padding: 10px;
+        padding: 20px;
     }
 }
