@@ -91,8 +91,6 @@ header > a > img {
     width: 100%; /* Botones anchos */
     text-align: center;
     border-radius: 10px;
-    /* Fondo sutil para distinguir botones en móvil */
-    /*background-color: rgba(255, 255, 255, 0.2);*/
 }
 
 .usuarios {
@@ -117,7 +115,7 @@ footer {
     background-color: #FFD447;
     color: #212529;
     display: flex;
-    flex-direction: column; /* Vertical en móvil */
+    flex-direction: column; 
     align-items: center;
     text-align: center;
 }
@@ -129,7 +127,7 @@ footer > section {
     gap: 15px;
     width: 100%;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(0,0,0,0.1); /* Separadores */
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
     margin-bottom: 20px;
 }
 
@@ -167,14 +165,9 @@ footer h4 {
 
 /* =========================================
    2. MEDIA QUERY: TABLET (min-width: 768px)
-   Aquí empieza a transformarse a horizontal
    ========================================= */
 @media screen and (min-width: 768px) {
     
-    /* Header: Aún mantenemos hamburguesa si hay muchos items, 
-       o podemos pasar a menú visible simplificado. 
-       Opción OtakuStore: Pasamos a menú visible pero compacto. */
-
     header {
         padding: 15px 30px;
     }
@@ -190,8 +183,8 @@ footer h4 {
 
     /* Restauramos el menú visible horizontal */
     .menu {
-        position: static; /* Ya no es absolute */
-        display: flex;    /* Siempre visible */
+        position: static; 
+        display: flex;    
         flex-direction: row;
         background-color: transparent;
         padding: 0;
@@ -202,7 +195,7 @@ footer h4 {
     }
 
     .menu ul {
-        flex-direction: row; /* Horizontal */
+        flex-direction: row; 
         width: auto;
     }
 
@@ -220,7 +213,7 @@ footer h4 {
         gap: 15px;
     }
 
-    /* Footer: Pasamos a fila (row) pero con wrap si hace falta */
+    /* Footer: Pasamos a fila */
     footer {
         flex-direction: row;
         justify-content: space-around;
@@ -229,17 +222,16 @@ footer h4 {
     }
 
     footer > section {
-        width: auto; /* Ya no ocupa 100% */
-        border-bottom: none; /* Quitamos bordes */
+        width: auto; 
+        border-bottom: none; 
         margin-bottom: 0;
-        align-items: flex-start; /* Alineación izquierda */
+        align-items: flex-start;
     }
 }
 
 
 /* =========================================
    3. MEDIA QUERY: ESCRITORIO (min-width: 1024px)
-   Aquí damos el estilo final amplio y con hovers
    ========================================= */
 @media screen and (min-width: 1024px) {
 
@@ -249,11 +241,11 @@ footer h4 {
     }
 
     header > a > img {
-        width: 200px; /* Logo grande */
+        width: 200px; 
     }
 
     .menu {
-        gap: 40px; /* Más espacio */
+        gap: 30px; 
     }
 
     .menu > ul > li > a {
@@ -262,9 +254,8 @@ footer h4 {
         transition: all 0.3s ease;
     }
 
-    /* HOVERS (Solo en escritorio para evitar sticky hover en móvil) */
     header > a > img:hover {
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
 
     .menu > ul > li > a:hover {
