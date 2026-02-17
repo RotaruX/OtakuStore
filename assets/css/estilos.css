@@ -1,3 +1,8 @@
+/* =========================================
+   1. ESTILOS BASE (MÓVIL)
+   Estos estilos se aplican a TODOS los dispositivos por defecto
+   ========================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,87 +19,30 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+/* --- HEADER MÓVIL --- */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 15px 40px; 
+    padding: 15px 20px; /* Padding más pequeño para móvil */
     background-color: #FFD447;
-    color: #212529; 
-    font-size: 18px;
+    color: #212529;
+    font-size: 16px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     position: relative;
     z-index: 100;
 }
 
-/* Logo */
+/* Logo más pequeño en móvil */
 header > a > img {
-    width: 200px;
+    width: 140px;
     transition: transform 0.3s;
 }
-header > a > img:hover {
-    transform: scale(1.05);
-}
 
-.menu {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; 
-    flex-grow: 1; 
-    gap: 30px; 
-    font-size: 1.4rem;
-}
-
-.menu ul {
-    display: flex;
-    align-items: center;
-    gap: 15px; 
-    list-style: none;
-}
-
-.menu > ul > li > a {
-    text-decoration: none;
-    color: #212529; 
-    text-transform: uppercase;
-    padding: 10px 20px;
-    font-weight: 600;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-
-.menu > ul > li > a:hover {
-    background-color: #FFE587;
-    color: #212529;
-}
-
-header > section > ul > li > a.activo {
-    background-color: #212529;
-    color: #FFD447;
-    font-weight: bold;
-}
-
-.usuarios {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 1.8rem;
-}
-
-.usuarios > a {
-    text-decoration: none;
-    color: #212529;
-    transition: transform 0.2s, color 0.2s;
-}
-
-.usuarios > a:hover {
-    color: white; 
-    transform: scale(1.1);
-}
-
+/* Botón Hamburguesa (Visible por defecto en móvil) */
 .hamburguesa {
-    display: none;
+    display: block; /* Se ve en móvil */
     background: none;
     border: none;
     font-size: 2rem;
@@ -102,29 +50,96 @@ header > section > ul > li > a.activo {
     color: #212529;
 }
 
+/* Menú Oculto por defecto (Estilo cajón/drawer) */
+.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #FFD447;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    display: none; /* Oculto hasta que JS le añada la clase .activo */
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    z-index: 99;
+}
 
+/* Clase que JS activará al pulsar la hamburguesa */
+.menu.activo {
+    display: flex;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column; /* Vertical en móvil */
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    width: 100%;
+}
+
+.menu > ul > li > a {
+    display: block;
+    text-decoration: none;
+    color: #212529;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    width: 100%; /* Botones anchos */
+    text-align: center;
+    border-radius: 10px;
+    /* Fondo sutil para distinguir botones en móvil */
+    /*background-color: rgba(255, 255, 255, 0.2);*/
+}
+
+.usuarios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 1.8rem;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.usuarios > a {
+    text-decoration: none;
+    color: #212529;
+}
+
+/* --- FOOTER MÓVIL --- */
 footer {
     width: 100%;
-    padding: 40px 0; 
+    padding: 30px 0;
     background-color: #FFD447;
     color: #212529;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column; /* Vertical en móvil */
+    align-items: center;
+    text-align: center;
 }
-
 
 footer > section {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    gap: 15px; 
+    gap: 15px;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1); /* Separadores */
     margin-bottom: 20px;
 }
 
+footer > section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
 footer h4 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 800;
     text-transform: uppercase;
     border-bottom: 2px solid #212529;
@@ -135,88 +150,144 @@ footer h4 {
     text-decoration: none;
     color: #212529;
     font-weight: bold;
-    transition: color 0.3s;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
-
-.footer-links a:hover {
-    color: white;
-}
-
 
 .social-icons {
-    display: flex; 
-    gap: 20px;    
+    display: flex;
+    gap: 20px;
 }
 
 .social-icons a {
     text-decoration: none;
     color: #212529;
     font-size: 1.5rem;
-    transition: transform 0.3s, color 0.3s;
 }
 
-.social-icons a:hover {
-    color: white;
-    transform: scale(1.2) rotate(10deg);
-}
 
-.footer-copy p {
-    font-size: 0.9rem;
-    font-weight: bold;
-}
+/* =========================================
+   2. MEDIA QUERY: TABLET (min-width: 768px)
+   Aquí empieza a transformarse a horizontal
+   ========================================= */
+@media screen and (min-width: 768px) {
+    
+    /* Header: Aún mantenemos hamburguesa si hay muchos items, 
+       o podemos pasar a menú visible simplificado. 
+       Opción OtakuStore: Pasamos a menú visible pero compacto. */
 
-/*Responsive movil*/
-@media screen and (max-width: 600px) {
+    header {
+        padding: 15px 30px;
+    }
+
+    header > a > img {
+        width: 160px; /* Logo mediano */
+    }
+
+    /* Ocultamos la hamburguesa */
     .hamburguesa {
-        display: block;
-    }
-
-    .menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #FFD447;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        padding: 30px 0;
         display: none;
-        box-shadow: 0 6px 10px rgba(0,0,0,0.15);
     }
 
-    .menu.activo {
-        display: flex;
+    /* Restauramos el menú visible horizontal */
+    .menu {
+        position: static; /* Ya no es absolute */
+        display: flex;    /* Siempre visible */
+        flex-direction: row;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+        justify-content: flex-end;
+        width: auto;
+        gap: 20px;
     }
 
     .menu ul {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row; /* Horizontal */
+        width: auto;
     }
 
-    .menu ul li a {
-        font-size: 1.2rem;
+    .menu > ul > li > a {
+        font-size: 1.2rem; /* Letra más pequeña para que quepa */
+        width: auto;
+        background-color: transparent; /* Quitamos fondo de móvil */
+        padding: 8px 12px;
     }
 
     .usuarios {
-        margin-top: 15px;
-        font-size: 1.6rem;
+        width: auto;
+        margin-top: 0;
+        font-size: 1.4rem;
+        gap: 15px;
     }
 
+    /* Footer: Pasamos a fila (row) pero con wrap si hace falta */
     footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: left;
     }
 
     footer > section {
-        width: 100%;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
-        padding-bottom: 20px;
+        width: auto; /* Ya no ocupa 100% */
+        border-bottom: none; /* Quitamos bordes */
+        margin-bottom: 0;
+        align-items: flex-start; /* Alineación izquierda */
+    }
+}
+
+
+/* =========================================
+   3. MEDIA QUERY: ESCRITORIO (min-width: 1024px)
+   Aquí damos el estilo final amplio y con hovers
+   ========================================= */
+@media screen and (min-width: 1024px) {
+
+    header {
+        padding: 15px 40px;
+        font-size: 18px;
+    }
+
+    header > a > img {
+        width: 200px; /* Logo grande */
+    }
+
+    .menu {
+        gap: 40px; /* Más espacio */
+    }
+
+    .menu > ul > li > a {
+        font-size: 1.3rem;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+    }
+
+    /* HOVERS (Solo en escritorio para evitar sticky hover en móvil) */
+    header > a > img:hover {
+        transform: scale(1.05);
+    }
+
+    .menu > ul > li > a:hover {
+        background-color: #FFE587;
+        color: #212529;
+        transform: translateY(-2px);
+    }
+
+    .usuarios > a {
+        transition: transform 0.2s;
     }
     
-    footer > section:last-child {
-        border-bottom: none;
+    .usuarios > a:hover {
+        color: white; 
+        transform: scale(1.2);
+    }
+
+    .footer-links a:hover,
+    .social-icons a:hover {
+        color: white;
+    }
+    
+    .social-icons a:hover {
+        transform: scale(1.2) rotate(10deg);
     }
 }

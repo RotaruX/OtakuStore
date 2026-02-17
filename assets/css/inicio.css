@@ -1,94 +1,139 @@
-.carrusel{
+/* =========================================
+   1. ESTILOS BASE (MÓVIL)
+   Se aplican por defecto a todos los dispositivos
+   ========================================= */
+
+.carrusel {
     width: 100%;
-    height: 50vh;
+    height: 70vh; /* En móvil suele gustar más alto para impactar */
     color: white;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    /* En móvil centramos todo */
+    align-items: center; 
     text-align: center;
     background-size: cover;
-    background-position:30%;
-    animation: carruselFondo 15s infinite ease-in-out;
+    background-position: center; /* En móvil, mejor centrado */
+    background-color: #333; /* Color de fondo mientras carga */
+    animation: carruselFondo 20s infinite ease-in-out;
 }
 
+/* CORRECCIÓN ANIMACIÓN: 
+   Para 4 imágenes + vuelta al inicio suave.
+   0% y 100% deben ser iguales.
+*/
 @keyframes carruselFondo {
     0% {
-        background-image:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url("../img/carrusel_1.png");
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../img/carrusel_1.png");
     }
-    33% {
-        background-image:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url("../img/carrusel_2.png");
+    25% {
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../img/carrusel_2.png");
     }
-    66% {
-        background-image:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url("../img/carrusel_3.png");
+    50% {
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../img/carrusel_3.png");
+    }
+    75% {
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../img/carrusel_4.png");
     }
     100% {
-        background-image:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url("../img/carrusel_4.png");
+        background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../img/carrusel_1.png");
     }
 }
 
-.bienvenida{
+.bienvenida {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 50%;
-    margin-left: 20px;
-    gap: 30px;
+    align-items: center; /* Centrado en móvil */
+    justify-content: center;
+    width: 90%; /* Casi todo el ancho de la pantalla */
+    margin: 0 auto; /* Centrado horizontalmente */
+    gap: 20px;
 }
 
-.bienvenida h1{
-    font-size: 2.5rem;
+.bienvenida h1 {
+    font-size: 1.8rem; /* Tamaño legible en móvil */
+    line-height: 1.3;
 }
 
-.bienvenida > a > button{
-    font-size: 1.2rem;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: #FFD447;
-    color: black;
-    font-weight: bold;
-    border: none;
-}
-
-.bienvenida > a{
-    color: white;
-}
-
-.bienvenida > a > button:hover{
-    background-color: #E6B93C;
-}
-
-
-.bienvenida > a{
+.bienvenida > a {
     text-decoration: none;
     color: white;
+    width: 100%; /* Para que el botón pueda expandirse */
+    display: flex;
+    justify-content: center;
 }
 
-/*Responsive movil*/
-@media screen and (max-width: 600px) {
-    .carrusel{
+.bienvenida > a > button {
+    font-size: 1rem;
+    padding: 15px 30px;
+    width: 80%; /* Botón ancho, fácil de pulsar */
+    border-radius: 20px;
+    background-color: #FFD447;
+    color: #212529; /* Negro para contraste */
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   2. MEDIA QUERY: TABLET (min-width: 768px)
+   ========================================= */
+@media screen and (min-width: 768px) {
+    
+    .carrusel {
+        height: 60vh; /* Un poco menos alto que en móvil */
+    }
+
+    .bienvenida {
+        width: 70%; /* Reducimos ancho para que no se estire tanto */
+    }
+
+    .bienvenida h1 {
+        font-size: 2.2rem;
+    }
+
+    .bienvenida > a > button {
+        width: auto; /* El botón ya no necesita ser tan ancho */
+        padding: 15px 40px;
+        font-size: 1.1rem;
+    }
+}
+
+/* =========================================
+   3. MEDIA QUERY: ESCRITORIO (min-width: 1024px)
+   ========================================= */
+@media screen and (min-width: 1024px) {
+
+    .carrusel {
         height: 70vh;
+        background-position: 30%;
+        align-items: flex-start; 
+        text-align: left;
     }
 
-    .bienvenida{
-        justify-content: center;
-        width: 100%;
+    .bienvenida {
+        width: 50%;
+        margin-left: 5%; /* Usar % es mejor que 20px fijo */
+        margin-right: 0;
+        align-items: flex-start; /* Botón y texto a la izquierda */
+        gap: 30px;
     }
 
-    .bienvenida > h1{
-        font-size: 1.7rem;
-        width: 90%;
+    .bienvenida h1 {
+        font-size: 3rem; /* Título grande e impactante */
     }
 
-    .bienvenida > a > button{
-        font-size: 1rem;
-        padding: 20px;
+    /* HOVER (Solo en escritorio) */
+    .bienvenida > a > button {
+        font-size: 1.2rem;
+        padding: 20px 40px;
+        transition: transform 0.2s, background-color 0.3s;
+    }
+
+    .bienvenida > a > button:hover {
+        background-color: #E6B93C;
+        transform: scale(1.05); /* Efecto zoom */
     }
 }
