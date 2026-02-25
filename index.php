@@ -12,7 +12,7 @@
         <h2>Más Vendidos</h2>
         <div class="contenedor-tarjetas">
             <article class="tarjeta">
-                <img src="./assets/img/funko_zoro.jpg" alt="Funko Roronoa Zoro">
+                <img src="./assets/img/funko_zoro.png" alt="Funko Roronoa Zoro">
                 <div class="info">
                     <span class="categoria">Funko</span>
                     <h3>Funko Roronoa Zoro</h3>
@@ -32,7 +32,7 @@
             </article>
 
             <article class="tarjeta">
-                <img src="./assets/img/katana_zoro.jpg" alt="Katana Enma de Zoro">
+                <img src="./assets/img/katana_zoro.png" alt="Katana Enma de Zoro">
                 <div class="info">
                     <span class="categoria">Funko</span>
                     <h3>Katana Enma de Zoro</h3>
@@ -50,6 +50,18 @@
                     <button class="btn-comprar">Añadir al carrito</button>
                 </div>
             </article>
+        </div>
+    </section>
+
+    <section class="grid-tipos">
+        <div class="tarjeta-tipos">
+            <span>FUNKOS</span>
+            <a href="./tienda.php?tipo=funkos"><button class="btn-comprar">VER MAS</button></a>
+        </div>
+
+        <div class="tarjeta-tipos">
+            <span>MANGAS</span>
+            <a href="./tienda.php?tipo=comics"><button class="btn-comprar">VER MAS</button></a>
         </div>
     </section>
 </main>
