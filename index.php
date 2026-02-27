@@ -4,7 +4,7 @@
     <section class="carrusel">
         <div class="bienvenida">
             <h1>¡BIENVENIDO A OTAKUSTORE, TU TIENDA ONLINE DE CONFIANZA!</h1>
-            <a href="./tienda.php"><button>VER TIENDA</button></a>
+            <a href="./tienda.php"><button class="btn-comprar">VER TIENDA</button></a>
         </div>
     </section>
 
@@ -64,6 +64,11 @@
             <span>MANGAS</span>
             <a href="./tienda.php?tipo=comics"><button class="btn-comprar">VER MAS</button></a>
         </div>
+    </section>
+
+    <section class="ferias">
+        <h3>¿QUIERES SABER CUALES SON LAS PROXIA FERIAS?</h3>
+        <a href="./ferias.php"><button class="btn-comprar">VER FERIAS</button></a>
     </section>
 </main>
 
