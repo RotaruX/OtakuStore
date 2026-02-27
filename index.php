@@ -54,6 +54,7 @@
     </section>
 
     <section class="grid-tipos">
+        <h2>NUESTRAS SECCIONES</h2>
         <div class="tarjeta-tipos">
             <span>FUNKOS</span>
             <a href="./tienda.php?tipo=funkos"><button class="btn-comprar">VER MAS</button></a>

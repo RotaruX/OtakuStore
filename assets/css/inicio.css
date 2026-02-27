@@ -20,7 +20,6 @@
 .mas-vendidos {
     padding: 40px 20px;
     text-align: center;
-    background-color: #f9f9f9;
 }
 
 .mas-vendidos h2 {
@@ -30,7 +29,6 @@
 }
 
 .contenedor-tarjetas {
-    background-color: #f9f9f9;
     display: grid;
     grid-template-columns: 1fr;
     gap: 25px;
@@ -40,7 +38,7 @@
     background: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
 
@@ -149,6 +147,11 @@
     gap: 10px;
 }
 
+.grid-tipos h2 {
+    text-align: center;
+    padding: 10px;
+}
+
 .tarjeta-tipos {
     position: relative;
     display: flex;
@@ -174,22 +177,31 @@
     opacity: 1;
 }
 
+.tarjeta-tipos span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .tarjeta-tipos span,
 .tarjeta-tipos a {
     position: relative;
     z-index: 2;
 }
 
-.tarjeta-tipos:nth-child(1) {
+.tarjeta-tipos:nth-of-type(1) {
     background-image: url(../img/funko_tipos.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
-.tarjeta-tipos:last-child {
+
+
+.tarjeta-tipos:nth-of-type(2) {
     background-image: url(../img/manga_tipo.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 /* =========================================
@@ -273,9 +285,18 @@
         background-color: #E6B93C;
     }
 
+    .tarjeta-tipos {
+        background-position: center;
+        height: 30vh;
+    }
 
     .tarjeta-tipos::before {
         opacity: 0;
+    }
+
+    .tarjeta-tipos span {
+        font-size: 25px;
+        font-weight: bold;
     }
 
     .tarjeta-tipos span,
@@ -291,5 +312,13 @@
     .tarjeta-tipos:hover span,
     .tarjeta-tipos:hover a {
         opacity: 1;
+    }
+
+    .grid-tipos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-tipos h2 {
+        grid-column: span 2;
     }
 }
