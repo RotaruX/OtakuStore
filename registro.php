@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Las contraseñas no coinciden.';
     } else {
         // Comprobar si el email ya existe
-        $stmt = $conexion->prepare("SELECT id_usuario FROM usuario WHERE email = :email LIMIT 1");
+        $stmt = $conexion->prepare("SELECT id_usuario FROM usuarios WHERE email = :email LIMIT 1");
         $stmt->execute([':email' => $email]);
 
         if ($stmt->fetch()) {
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $conexion->prepare(
-                "INSERT INTO usuario (nombre_usuario, email, contraseña, rol, fecha_registro)
+                "INSERT INTO usuarios (nombre_usuario, email, contraseña, rol, fecha_registro)
                  VALUES (:nombre, :email, :password, 'usuario', NOW())"
             );
             $stmt->execute([

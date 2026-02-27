@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($email) || empty($password)) {
         $error = 'Por favor, completa todos los campos.';
     } else {
-        $stmt = $conexion->prepare("SELECT * FROM usuario WHERE email = :email LIMIT 1");
+        $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE email = :email LIMIT 1");
         $stmt->execute([':email' => $email]);
         $usuario = $stmt->fetch();
 
