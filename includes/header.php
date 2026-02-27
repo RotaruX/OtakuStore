@@ -1,5 +1,10 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -20,6 +25,9 @@
     <?php
     elseif ($paginaActual == 'ferias.php'): ?>
         <link rel="stylesheet" href="./assets/css/ferias.css">
+    <?php
+    elseif ($paginaActual == 'login.php' || $paginaActual == 'registro.php'): ?>
+        <link rel="stylesheet" href="./assets/css/login.css">
     <?php endif; ?>
 </head>
 
@@ -35,7 +43,14 @@
                 <li><a href="ferias.php" class="<?= $paginaActual == 'ferias.php' ? 'activo' : '' ?>">Ferias</a></li>
             </ul>
             <section class="usuarios">
-                <a href="./login.php"><i class="fa-solid fa-user"></i></a>
+                <?php if (isset($_SESSION['id_usuario'])): ?>
+                    <?php if ($_SESSION['rol'] === 'administrador'): ?>
+                        <a href="./admin/index.php" title="Panel Admin"><i class="fa-solid fa-shield-halved"></i></a>
+                    <?php endif; ?>
+                    <a href="./logout.php" title="Cerrar Sesión"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <?php else: ?>
+                    <a href="./login.php" title="Iniciar Sesión"><i class="fa-solid fa-user"></i></a>
+                <?php endif; ?>
                 <a href="./carrito.php"><i class="fa-solid fa-cart-plus"></i></a>
             </section>
         </section>
