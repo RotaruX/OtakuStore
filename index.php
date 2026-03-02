@@ -4,7 +4,7 @@
     <section class="carrusel">
         <div class="bienvenida">
             <h1>¡BIENVENIDO A OTAKUSTORE, TU TIENDA ONLINE DE CONFIANZA!</h1>
-            <a href="./tienda.php"><button class="btn-comprar">VER TIENDA</button></a>
+            <a href="./tienda.php"><button class="btn">VER TIENDA</button></a>
         </div>
     </section>
 
@@ -17,7 +17,7 @@
                     <span class="categoria">Funko</span>
                     <h3>Funko Roronoa Zoro</h3>
                     <p class="precio">15.99€</p>
-                    <button class="btn-comprar" data-id="1">Añadir al carrito</button>
+                    <button class="btn" data-id="1">Añadir al carrito</button>
                 </div>
             </article>
 
@@ -27,7 +27,7 @@
                     <span class="categoria">Funko</span>
                     <h3>Funko Tanjiro Kamado</h3>
                     <p class="precio">15.99€</p>
-                    <button class="btn-comprar" data-id="2">Añadir al carrito</button>
+                    <button class="btn" data-id="2">Añadir al carrito</button>
                 </div>
             </article>
 
@@ -37,7 +37,7 @@
                     <span class="categoria">Funko</span>
                     <h3>Katana Enma de Zoro</h3>
                     <p class="precio">45.50€</p>
-                    <button class="btn-comprar" data-id="3">Añadir al carrito</button>
+                    <button class="btn" data-id="3">Añadir al carrito</button>
                 </div>
             </article>
 
@@ -47,7 +47,7 @@
                     <span class="categoria">Cómic</span>
                     <h3>Manga One Piece - Vol. 1</h3>
                     <p class="precio">7.95€</p>
-                    <button class="btn-comprar" data-id="4">Añadir al carrito</button>
+                    <button class="btn" data-id="4">Añadir al carrito</button>
                 </div>
             </article>
         </div>
@@ -57,12 +57,12 @@
         <h2>NUESTRAS SECCIONES</h2>
         <div class="tarjeta-tipos">
             <span>FUNKOS</span>
-            <a href="./tienda.php?tipo=funkos"><button class="btn-comprar">VER MAS</button></a>
+            <a href="./tienda.php?tipo=funkos"><button class="btn">VER MAS</button></a>
         </div>
 
         <div class="tarjeta-tipos">
             <span>MANGAS</span>
-            <a href="./tienda.php?tipo=comics"><button class="btn-comprar">VER MAS</button></a>
+            <a href="./tienda.php?tipo=comics"><button class="btn">VER MAS</button></a>
         </div>
     </section>
 

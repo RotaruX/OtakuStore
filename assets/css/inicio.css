@@ -75,7 +75,7 @@
     margin-bottom: 15px;
 }
 
-.btn-comprar {
+.btn {
     padding: 14px 50px;
     font-size: 1rem;
     font-weight: bold;
@@ -88,7 +88,7 @@
 }
 
 /* Estado: producto añadido al carrito */
-.btn-comprar.btn-añadido {
+.btn.btn-añadido {
     background-color: #27ae60;
     color: #fff;
     transform: scale(1.02);
@@ -96,7 +96,7 @@
 }
 
 /* Estado: sin stock */
-.btn-comprar.btn-sin-stock {
+.btn.btn-sin-stock {
     background-color: #999;
     color: #fff;
     cursor: default;
@@ -197,6 +197,24 @@
     z-index: 2;
 }
 
+.tarjeta-tipos .btn {
+    padding: 12px 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.tarjeta-tipos .btn:hover {
+    background-color: white;
+    color: #212529;
+    transform: scale(1.05);
+}
 
 
 .tarjeta-tipos:nth-of-type(1) {
@@ -262,6 +280,13 @@
 }
 
 .ferias .btn-comprar {
+    padding: 14px 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
     background-color: transparent;
     color: white;
     border: 2px solid white;
@@ -347,7 +372,7 @@
         transform: translateY(-10px);
     }
 
-    .btn-comprar:hover {
+    .btn:hover {
         background-color: #E6B93C;
         transform: scale(1.05);
     }

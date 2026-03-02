@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" id="confirmar_password" name="confirmar_password" placeholder="Repite tu contraseña" required>
             </div>
 
-            <button type="submit" class="btn-comprar">REGISTRARSE</button>
+            <button type="submit" class="btn">REGISTRARSE</button>
         </form>
 
         <p class="enlace-alterno">¿Ya tienes cuenta? <a href="login.php">Inicia Sesión</a></p>

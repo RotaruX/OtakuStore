@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" id="password" name="password" placeholder="Tu contraseña" required>
             </div>
 
-            <button type="submit" class="btn-comprar">INICIAR SESIÓN</button>
+            <button type="submit" class="btn">INICIAR SESIÓN</button>
         </form>
 
         <p class="enlace-alterno">¿No tienes cuenta? <a href="registro.php">Regístrate</a></p>

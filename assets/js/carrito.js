@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const botonesCarrito = document.querySelectorAll(
-    ".mas-vendidos .btn-comprar[data-id]",
+    ".mas-vendidos .btn[data-id]",
   );
 
   botonesCarrito.forEach((btn) => {

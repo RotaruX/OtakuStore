@@ -110,7 +110,7 @@
 }
 
 /* Botón */
-.login-container .btn-comprar {
+.login-container .btn {
   width: 100%;
   margin-top: 10px;
   padding: 14px 50px;
@@ -128,7 +128,7 @@
     transform 0.2s ease;
 }
 
-.login-container .btn-comprar:hover {
+.login-container .btn:hover {
   background-color: #e6b93c;
   transform: scale(1.02);
 }
