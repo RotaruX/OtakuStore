@@ -19,5 +19,5 @@ if (!isset($_SESSION['id_usuario'])) {
 $id_producto = intval($_POST['id_producto'] ?? 0);
 $id_usuario  = intval($_SESSION['id_usuario']);
 
-$resultado = añadirAlCarrito($conexion, $id_usuario, $id_producto);
+$resultado = eliminarDelCarrito($conexion, $id_usuario, $id_producto);
 echo json_encode($resultado);

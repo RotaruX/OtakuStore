@@ -25,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($password !== $confirmar) {
         $error = 'Las contraseñas no coinciden.';
     } else {
-        // Comprobar si el email ya existe
         $stmt = $conexion->prepare("SELECT id_usuario FROM usuarios WHERE email = :email LIMIT 1");
         $stmt->execute([':email' => $email]);
 

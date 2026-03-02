@@ -1,7 +1,4 @@
-/* =========================================
-   1. ESTILOS BASE (MÓVIL)
-   Estos estilos se aplican a TODOS los dispositivos por defecto
-   ========================================= */
+/* Vista móvil */
 
 * {
     margin: 0;
@@ -19,13 +16,12 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-/* --- HEADER MÓVIL --- */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 15px 20px; /* Padding más pequeño para móvil */
+    padding: 15px 20px;
     background-color: #FFD447;
     color: #212529;
     font-size: 16px;
@@ -34,15 +30,13 @@ header {
     z-index: 100;
 }
 
-/* Logo más pequeño en móvil */
 header > a > img {
     width: 140px;
     transition: transform 0.3s;
 }
 
-/* Botón Hamburguesa (Visible por defecto en móvil) */
 .hamburguesa {
-    display: block; /* Se ve en móvil */
+    display: block;
     background: none;
     border: none;
     font-size: 2rem;
@@ -50,7 +44,6 @@ header > a > img {
     color: #212529;
 }
 
-/* Menú Oculto por defecto (Estilo cajón/drawer) */
 .menu {
     position: absolute;
     top: 100%;
@@ -61,19 +54,18 @@ header > a > img {
     align-items: center;
     gap: 20px;
     padding: 30px;
-    display: none; /* Oculto hasta que JS le añada la clase .activo */
+    display: none;
     box-shadow: 0 6px 10px rgba(0,0,0,0.15);
     z-index: 99;
 }
 
-/* Clase que JS activará al pulsar la hamburguesa */
 .menu.activo {
     display: flex;
 }
 
 .menu ul {
     display: flex;
-    flex-direction: column; /* Vertical en móvil */
+    flex-direction: column;
     align-items: center;
     gap: 20px;
     list-style: none;
@@ -88,7 +80,7 @@ header > a > img {
     padding: 10px 20px;
     font-weight: 600;
     font-size: 1.2rem;
-    width: 100%; /* Botones anchos */
+    width: 100%;
     text-align: center;
     border-radius: 10px;
 }
@@ -108,14 +100,13 @@ header > a > img {
     color: #212529;
 }
 
-/* --- FOOTER MÓVIL --- */
 footer {
     width: 100%;
     padding: 30px 0;
     background-color: #FFD447;
     color: #212529;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     text-align: center;
 }
@@ -127,7 +118,7 @@ footer > section {
     gap: 15px;
     width: 100%;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(0,0,0,0.1); 
+    border-bottom: 1px solid rgba(0,0,0,0.1);
     margin-bottom: 20px;
 }
 
@@ -162,29 +153,24 @@ footer h4 {
     font-size: 1.5rem;
 }
 
-
-/* =========================================
-   2. MEDIA QUERY: TABLET (min-width: 768px)
-   ========================================= */
+/* Vista tablet */
 @media screen and (min-width: 768px) {
-    
+
     header {
         padding: 15px 30px;
     }
 
     header > a > img {
-        width: 160px; /* Logo mediano */
+        width: 160px;
     }
 
-    /* Ocultamos la hamburguesa */
     .hamburguesa {
         display: none;
     }
 
-    /* Restauramos el menú visible horizontal */
     .menu {
-        position: static; 
-        display: flex;    
+        position: static;
+        display: flex;
         flex-direction: row;
         background-color: transparent;
         padding: 0;
@@ -195,14 +181,14 @@ footer h4 {
     }
 
     .menu ul {
-        flex-direction: row; 
+        flex-direction: row;
         width: auto;
     }
 
     .menu > ul > li > a {
-        font-size: 1.2rem; /* Letra más pequeña para que quepa */
+        font-size: 1.2rem;
         width: auto;
-        background-color: transparent; /* Quitamos fondo de móvil */
+        background-color: transparent;
         padding: 8px 12px;
     }
 
@@ -213,7 +199,6 @@ footer h4 {
         gap: 15px;
     }
 
-    /* Footer: Pasamos a fila */
     footer {
         flex-direction: row;
         justify-content: space-around;
@@ -222,17 +207,14 @@ footer h4 {
     }
 
     footer > section {
-        width: auto; 
-        border-bottom: none; 
+        width: auto;
+        border-bottom: none;
         margin-bottom: 0;
         align-items: flex-start;
     }
 }
 
-
-/* =========================================
-   3. MEDIA QUERY: ESCRITORIO (min-width: 1024px)
-   ========================================= */
+/* Vista escritorio */
 @media screen and (min-width: 1024px) {
 
     header {
@@ -241,11 +223,11 @@ footer h4 {
     }
 
     header > a > img {
-        width: 200px; 
+        width: 200px;
     }
 
     .menu {
-        gap: 30px; 
+        gap: 30px;
     }
 
     .menu > ul > li > a {
@@ -267,9 +249,9 @@ footer h4 {
     .usuarios > a {
         transition: transform 0.2s;
     }
-    
+
     .usuarios > a:hover {
-        color: white; 
+        color: white;
         transform: scale(1.2);
     }
 
@@ -277,7 +259,7 @@ footer h4 {
     .social-icons a:hover {
         color: white;
     }
-    
+
     .social-icons a:hover {
         transform: scale(1.2) rotate(10deg);
     }

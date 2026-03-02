@@ -1,6 +1,4 @@
-/* =========================================
-   1. ESTILOS BASE (MÓVIL) — CONTACTO
-   ========================================= */
+/* Vista móvil */
 
 .hero-contacto {
     position: relative;
@@ -150,9 +148,7 @@
     transform: scale(1.02);
 }
 
-/* =========================================
-   2. MEDIA QUERY: TABLET (min-width: 768px)
-   ========================================= */
+/* Vista tablet */
 @media screen and (min-width: 768px) {
 
     .hero-contacto {
@@ -168,9 +164,7 @@
     }
 }
 
-/* =========================================
-   3. MEDIA QUERY: ESCRITORIO (min-width: 1024px)
-   ========================================= */
+/* Vista escritorio */
 @media screen and (min-width: 1024px) {
 
     .hero-contacto {

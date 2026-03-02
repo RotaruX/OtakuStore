@@ -28,6 +28,9 @@ if (session_status() === PHP_SESSION_NONE) {
     <?php
     elseif ($paginaActual == 'login.php' || $paginaActual == 'registro.php'): ?>
         <link rel="stylesheet" href="./assets/css/login.css">
+    <?php
+    elseif ($paginaActual == 'carrito.php'): ?>
+        <link rel="stylesheet" href="./assets/css/carrito.css">
     <?php endif; ?>
 </head>
 

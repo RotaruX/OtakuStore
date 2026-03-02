@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", async () => {
       const idProducto = btn.dataset.id;
 
-      // Evitar doble clic mientras se procesa
       if (btn.disabled) return;
       btn.disabled = true;
 
@@ -23,13 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await res.json();
 
         if (data.logueado === false) {
-          // No logueado → redirigir a login
           window.location.href = "./login.php";
           return;
         }
 
         if (data.ok) {
-          // Feedback visual de éxito
           const textoOriginal = btn.textContent;
           btn.textContent = "✓ Añadido";
           btn.classList.add("btn-añadido");
@@ -40,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.disabled = false;
           }, 1800);
         } else if (data.mensaje) {
-          // Sin stock u otro aviso
           const textoOriginal = btn.textContent;
           btn.textContent = data.mensaje;
           btn.classList.add("btn-sin-stock");

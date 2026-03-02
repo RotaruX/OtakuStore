@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!form) return;
 
   form.addEventListener("submit", function (e) {
-    // Limpiar errores previos
     limpiarErrores();
 
     const pagina = form.getAttribute("action");
@@ -83,8 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
     return valido;
   }
 
-  // --- Utilidades ---
-
   function validarEmail(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
@@ -104,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .forEach((el) => el.classList.remove("input-error"));
   }
 
-  // Limpiar error individual al escribir
   document.querySelectorAll(".campo input").forEach((input) => {
     input.addEventListener("input", function () {
       this.classList.remove("input-error");
