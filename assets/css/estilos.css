@@ -98,7 +98,7 @@ header > a > img {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin-top: 15px;
     width: 100%;
 }
@@ -209,7 +209,7 @@ footer h4 {
     .usuarios {
         width: auto;
         margin-top: 0;
-        font-size: 1.4rem;
+        font-size: 1.9rem;
         gap: 15px;
     }
 

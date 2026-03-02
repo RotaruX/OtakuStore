@@ -4,7 +4,7 @@ session_start();
 
 // Si ya está logueado, redirigir
 if (isset($_SESSION['id_usuario'])) {
-    if ($_SESSION['rol'] === 'administrador') {
+    if ($_SESSION['rol'] === 'admin') {
         header("Location: admin/index.php");
     } else {
         header("Location: index.php");
@@ -15,29 +15,33 @@ if (isset($_SESSION['id_usuario'])) {
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = trim($_POST['email'] ?? '');
-    $password = $_POST['password'] ?? '';
+    $identificador = trim($_POST['usuario_o_email'] ?? '');
+    $password      = $_POST['password'] ?? '';
 
-    if (empty($email) || empty($password)) {
+    if (empty($identificador) || empty($password)) {
         $error = 'Por favor, completa todos los campos.';
     } else {
-        $stmt = $conexion->prepare("SELECT * FROM usuarios WHERE email = :email LIMIT 1");
-        $stmt->execute([':email' => $email]);
+        $stmt = $conexion->prepare(
+            "SELECT * FROM usuarios
+             WHERE email = :id OR nombre_usuario = :id2
+             LIMIT 1"
+        );
+        $stmt->execute([':id' => $identificador, ':id2' => $identificador]);
         $usuario = $stmt->fetch();
 
         if ($usuario && password_verify($password, $usuario['contraseña'])) {
-            $_SESSION['id_usuario'] = $usuario['id_usuario'];
+            $_SESSION['id_usuario']     = $usuario['id_usuario'];
             $_SESSION['nombre_usuario'] = $usuario['nombre_usuario'];
-            $_SESSION['rol'] = $usuario['rol'];
+            $_SESSION['rol']            = $usuario['rol'];
 
-            if ($usuario['rol'] === 'administrador') {
+            if ($usuario['rol'] === 'admin') {
                 header("Location: admin/index.php");
             } else {
                 header("Location: index.php");
             }
             exit;
         } else {
-            $error = 'Email o contraseña incorrectos.';
+            $error = 'Usuario/email o contraseña incorrectos.';
         }
     }
 }
@@ -63,9 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <form method="POST" action="login.php">
             <div class="campo">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="tu@email.com" required
-                    value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
+                <label for="usuario_o_email">Usuario o Email</label>
+                <input type="text" id="usuario_o_email" name="usuario_o_email"
+                    placeholder="Tu usuario o email"
+                    value="<?= htmlspecialchars($_POST['usuario_o_email'] ?? '') ?>" required>
             </div>
 
             <div class="campo">

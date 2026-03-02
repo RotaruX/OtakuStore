@@ -44,7 +44,7 @@ if (session_status() === PHP_SESSION_NONE) {
             </ul>
             <section class="usuarios">
                 <?php if (isset($_SESSION['id_usuario'])): ?>
-                    <?php if ($_SESSION['rol'] === 'administrador'): ?>
+                    <?php if ($_SESSION['rol'] === 'admin'): ?>
                         <a href="./admin/index.php" title="Panel Admin"><i class="fa-solid fa-shield-halved"></i></a>
                     <?php endif; ?>
                     <a href="./logout.php" title="Cerrar Sesión"><i class="fa-solid fa-right-from-bracket"></i></a>

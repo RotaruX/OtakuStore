@@ -34,12 +34,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $conexion->prepare(
-                "INSERT INTO usuarios (nombre_usuario, email, contraseña, rol, fecha_registro)
-                 VALUES (:nombre, :email, :password, 'usuario', NOW())"
+                "INSERT INTO usuarios (nombre_usuario, email, contraseña, rol)
+                 VALUES (:nombre, :email, :password, 'cliente')"
             );
             $stmt->execute([
-                ':nombre' => $nombre,
-                ':email' => $email,
+                ':nombre'   => $nombre,
+                ':email'    => $email,
                 ':password' => $hash
             ]);
 
