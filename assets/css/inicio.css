@@ -84,7 +84,22 @@
     background-color: #FFD447;
     color: #212529;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+/* Estado: producto añadido al carrito */
+.btn-comprar.btn-añadido {
+    background-color: #27ae60;
+    color: #fff;
+    transform: scale(1.02);
+    cursor: default;
+}
+
+/* Estado: sin stock */
+.btn-comprar.btn-sin-stock {
+    background-color: #999;
+    color: #fff;
+    cursor: default;
 }
 
 @keyframes carruselFondo {

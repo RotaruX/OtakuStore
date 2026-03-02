@@ -3,179 +3,199 @@
    ========================================= */
 
 .login-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 30px 20px;
 }
 
 .login-container {
-    background: white;
-    width: 100%;
-    max-width: 420px;
-    padding: 35px 25px;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    text-align: center;
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  padding: 35px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  text-align: center;
 }
 
 .login-container h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-    color: #212529;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #212529;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Mensajes */
 .mensaje-error {
-    background-color: #ffe0e0;
-    color: #c0392b;
-    padding: 12px 16px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  background-color: #ffe0e0;
+  color: #c0392b;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .mensaje-exito {
-    background-color: #e0ffe5;
-    color: #27ae60;
-    padding: 12px 16px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  background-color: #e0ffe5;
+  color: #27ae60;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* Formulario */
 .campo {
-    margin-bottom: 18px;
-    text-align: left;
+  margin-bottom: 18px;
+  text-align: left;
 }
 
 .campo label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #555;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .campo input {
-    width: 100%;
-    padding: 13px 16px;
-    font-size: 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    font-family: inherit;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
 .campo input:focus {
-    border-color: #FFD447;
-    box-shadow: 0 0 0 3px rgba(255, 212, 71, 0.25);
+  border-color: #ffd447;
+  box-shadow: 0 0 0 3px rgba(255, 212, 71, 0.25);
 }
 
 .campo input::placeholder {
-    color: #bbb;
+  color: #bbb;
 }
 
 .campo input.input-error {
-    border-color: #e74c3c;
-    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
 }
 
 .campo-error {
-    display: block;
-    color: #e74c3c;
-    font-size: 0.8rem;
-    margin-top: 5px;
-    font-weight: 600;
+  display: block;
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  font-weight: 600;
 }
 
 /* Botón */
 .login-container .btn-comprar {
-    width: 100%;
-    margin-top: 10px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffd447;
+  color: #212529;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.login-container .btn-comprar:hover {
+  background-color: #e6b93c;
+  transform: scale(1.02);
 }
 
 /* Enlace alterno */
 .enlace-alterno {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #777;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #777;
 }
 
 .enlace-alterno a {
-    color: #212529;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 2px solid #FFD447;
-    transition: color 0.2s ease;
+  color: #212529;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid #ffd447;
+  transition: color 0.2s ease;
 }
 
 .enlace-alterno a:hover {
-    color: #FFD447;
+  color: #ffd447;
 }
 
 /* =========================================
    2. MEDIA QUERY: TABLET (min-width: 768px)
    ========================================= */
 @media screen and (min-width: 768px) {
+  .login-page {
+    min-height: 85vh;
+  }
 
-    .login-page {
-        min-height: 85vh;
-    }
+  .login-container {
+    padding: 45px 40px;
+    max-width: 460px;
+  }
 
-    .login-container {
-        padding: 45px 40px;
-        max-width: 460px;
-    }
-
-    .login-container h2 {
-        font-size: 2rem;
-    }
+  .login-container h2 {
+    font-size: 2rem;
+  }
 }
 
 /* =========================================
    3. MEDIA QUERY: ESCRITORIO (min-width: 1024px)
    ========================================= */
 @media screen and (min-width: 1024px) {
+  .login-page {
+    min-height: 80vh;
+  }
 
-    .login-page {
-        min-height: 80vh;
-    }
+  .login-container {
+    padding: 50px 45px;
+    max-width: 480px;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
 
-    .login-container {
-        padding: 50px 45px;
-        max-width: 480px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+  .login-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
 
-    .login-container:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    }
+  .login-container h2 {
+    font-size: 2.2rem;
+  }
 
-    .login-container h2 {
-        font-size: 2.2rem;
-    }
-
-    .campo input {
-        padding: 14px 18px;
-    }
+  .campo input {
+    padding: 14px 18px;
+  }
 }

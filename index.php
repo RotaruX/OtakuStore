@@ -17,7 +17,7 @@
                     <span class="categoria">Funko</span>
                     <h3>Funko Roronoa Zoro</h3>
                     <p class="precio">15.99€</p>
-                    <button class="btn-comprar">Añadir al carrito</button>
+                    <button class="btn-comprar" data-id="1">Añadir al carrito</button>
                 </div>
             </article>
 
@@ -27,7 +27,7 @@
                     <span class="categoria">Funko</span>
                     <h3>Funko Tanjiro Kamado</h3>
                     <p class="precio">15.99€</p>
-                    <button class="btn-comprar">Añadir al carrito</button>
+                    <button class="btn-comprar" data-id="2">Añadir al carrito</button>
                 </div>
             </article>
 
@@ -37,7 +37,7 @@
                     <span class="categoria">Funko</span>
                     <h3>Katana Enma de Zoro</h3>
                     <p class="precio">45.50€</p>
-                    <button class="btn-comprar">Añadir al carrito</button>
+                    <button class="btn-comprar" data-id="3">Añadir al carrito</button>
                 </div>
             </article>
 
@@ -47,7 +47,7 @@
                     <span class="categoria">Cómic</span>
                     <h3>Manga One Piece - Vol. 1</h3>
                     <p class="precio">7.95€</p>
-                    <button class="btn-comprar">Añadir al carrito</button>
+                    <button class="btn-comprar" data-id="4">Añadir al carrito</button>
                 </div>
             </article>
         </div>
@@ -72,4 +72,5 @@
     </section>
 </main>
 
+<script src="./assets/js/carrito.js"></script>
 <?php require_once("includes/footer.php") ?>
