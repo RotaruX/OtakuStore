@@ -1,4 +1,6 @@
-/* Vista móvil */
+/* ═══════════════════════════════════════════════════════
+   INICIO.CSS  — Vista Móvil (base)
+   ═══════════════════════════════════════════════════════ */
 
 .carrusel {
     width: 100%;
@@ -286,7 +288,9 @@
     color: #212529;
 }
 
-/* Vista tablet */
+/* ══════════════════════════════════════════════════════
+   TABLET  ≥ 768px
+   ══════════════════════════════════════════════════════ */
 @media screen and (min-width: 768px) {
 
     .carrusel {
@@ -314,21 +318,22 @@
     }
 }
 
-/* Vista escritorio */
+/* ══════════════════════════════════════════════════════
+   ESCRITORIO  ≥ 1024px
+   ══════════════════════════════════════════════════════ */
 @media screen and (min-width: 1024px) {
 
     .carrusel {
         height: 70vh;
-        background-position: 30%;
-        align-items: flex-start;
-        text-align: left;
+        background-position: center;
+        align-items: center;
+        text-align: center;
     }
 
     .bienvenida {
-        width: 50%;
-        margin-left: 5%;
-        margin-right: 0;
-        align-items: flex-start;
+        width: 60%;
+        margin: 0 auto;
+        align-items: center;
         gap: 30px;
     }
 

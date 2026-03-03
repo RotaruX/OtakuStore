@@ -1,0 +1,449 @@
+/* ═══════════════════════════════════════════════════════
+   TIENDA.CSS  — Vista Móvil (base)
+   ═══════════════════════════════════════════════════════ */
+
+.tienda-hero {
+  width: 100%;
+  min-height: 35vh;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url("../img/carrusel_2.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.tienda-hero-content h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.tienda-hero-content p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+}
+
+.tienda-filtros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 25px 20px;
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #ffd447;
+}
+
+.filtros-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-filtro {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid #ddd;
+  background: #fff;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-filtro:hover {
+  border-color: #ffd447;
+  background-color: #fff5c2;
+  color: #212529;
+}
+
+.btn-filtro.activo {
+  background-color: #ffd447;
+  border-color: #ffd447;
+  color: #212529;
+  box-shadow: 0 3px 10px rgba(255, 212, 71, 0.5);
+}
+
+.filtros-busqueda {
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  transition: border-color 0.25s;
+}
+
+.filtros-busqueda:focus-within {
+  border-color: #ffd447;
+}
+
+.filtros-busqueda input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  font-family: "Poppins", sans-serif;
+  background: transparent;
+}
+
+.btn-buscar {
+  border: none;
+  background-color: #ffd447;
+  color: #212529;
+  padding: 10px 16px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.btn-buscar:hover {
+  background-color: #e6b93c;
+}
+
+.tienda-info-resultados {
+  padding: 12px 20px 0;
+  text-align: center;
+}
+
+.resultados-texto {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.tienda-grid-wrapper {
+  padding: 25px 20px 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tienda-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+}
+
+.tienda-tarjeta {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta-imagen-wrap {
+  position: relative;
+  background-color: #fafafa;
+}
+
+.tarjeta-imagen-wrap img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  padding: 15px;
+  display: block;
+}
+
+.sin-imagen {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #ccc;
+  background: #f5f5f5;
+}
+
+.categoria-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #ffd447;
+  color: #212529;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.tienda-tarjeta .info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+}
+
+.tienda-tarjeta .info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #212529;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+  height: auto;
+  min-height: 2.8em;
+}
+
+.tienda-tarjeta .precio {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #212529;
+  margin: 0;
+}
+
+.tienda-tarjeta .btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffd447;
+  color: #212529;
+  cursor: pointer;
+  transition:
+    background-color 0.25s,
+    transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: auto;
+  text-align: center;
+}
+
+.tienda-tarjeta .btn:hover {
+  background-color: #e6b93c;
+}
+
+.tienda-tarjeta .btn.btn-anadir.btn-añadido {
+  background-color: #27ae60;
+  color: #fff;
+  transform: scale(1.02);
+}
+
+.tienda-tarjeta .btn.btn-sin-stock {
+  background-color: #bbb;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.tienda-sin-resultados {
+  text-align: center;
+  padding: 60px 20px;
+  color: #888;
+}
+
+.tienda-sin-resultados i {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  display: block;
+  color: #ddd;
+}
+
+.tienda-sin-resultados h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.tienda-sin-resultados p {
+  margin-bottom: 20px;
+}
+
+.tienda-sin-resultados .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ffd447;
+  color: #212529;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: background-color 0.25s;
+}
+
+.tienda-sin-resultados .btn:hover {
+  background-color: #e6b93c;
+}
+
+.tienda-paginacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.pag-btn,
+.pag-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.pag-btn {
+  background-color: #ffd447;
+  color: #212529;
+  padding: 0 14px;
+}
+
+.pag-btn:hover:not(.disabled) {
+  background-color: #e6b93c;
+  transform: scale(1.05);
+}
+
+.pag-btn.disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: default;
+  pointer-events: none;
+}
+
+.pag-num {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #ddd;
+}
+
+.pag-num:hover {
+  border-color: #ffd447;
+  background-color: #fff5c2;
+}
+
+.pag-num.activo {
+  background-color: #ffd447;
+  border-color: #ffd447;
+  color: #212529;
+  box-shadow: 0 3px 10px rgba(255, 212, 71, 0.45);
+}
+
+.pag-dots {
+  color: #aaa;
+  font-size: 1rem;
+  padding: 0 4px;
+}
+
+.pag-numeros {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pag-info {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.tienda-tarjeta.oculta-tablet {
+  display: none;
+}
+
+/* ══════════════════════════════════════════════════════
+   TABLET  ≥ 768px
+   ══════════════════════════════════════════════════════ */
+@media screen and (min-width: 768px) {
+  .tienda-hero {
+    min-height: 42vh;
+  }
+
+  .tienda-hero-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .tienda-filtros {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+
+  .filtros-busqueda {
+    max-width: 340px;
+  }
+
+  .tienda-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .tienda-grid-wrapper {
+    padding: 30px 30px 60px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════
+   ESCRITORIO  ≥ 1024px
+   ══════════════════════════════════════════════════════ */
+@media screen and (min-width: 1024px) {
+  .tienda-hero {
+    min-height: 50vh;
+  }
+
+  .tienda-hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .tienda-hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .tienda-filtros {
+    padding: 22px 60px;
+  }
+
+  .tienda-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+  }
+
+  .tienda-grid-wrapper {
+    padding: 35px 60px 70px;
+  }
+
+  .tienda-tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  }
+
+  .tienda-tarjeta .btn.btn-anadir:hover {
+    background-color: #e6b93c;
+    transform: scale(1.04);
+  }
+}
