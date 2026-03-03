@@ -12,9 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       try {
         const formData = new FormData();
+        formData.append("accion", "añadir");
         formData.append("id_producto", idProducto);
 
-        const res = await fetch("./includes/añadir_carrito.php", {
+        const res = await fetch("./includes/carrito_api.php", {
           method: "POST",
           body: formData,
         });

@@ -19,6 +19,7 @@ $stmt = $conexion->prepare("
         p.nombre,
         p.precio,
         p.imagen,
+        p.stock,
         (c.cantidad * p.precio) AS total_linea
     FROM carrito c
     INNER JOIN productos p ON p.id_producto = c.id_producto
@@ -40,7 +41,11 @@ $total_general = array_sum(array_column($items, 'total_linea'));
             <i class="fa-solid fa-user"></i>
             Hola, <strong><?= $nombre_usuario ?></strong>
         </p>
+        <a href="pedidos.php" class="btn-mis-pedidos">
+            <i class="fa-solid fa-box-open"></i> Mis pedidos
+        </a>
     </section>
+
 
     <?php if (empty($items)): ?>
         <section class="carrito-vacio">
@@ -60,10 +65,13 @@ $total_general = array_sum(array_column($items, 'total_linea'));
                     $precio     = floatval($item['precio']);
                     $total_item = floatval($item['total_linea']);
                     $id_prod    = intval($item['id_producto']);
+                    $stock      = intval($item['stock'] ?? 99);
                 ?>
                 <article class="tarjeta-carrito"
                          data-id="<?= $id_prod ?>"
-                         data-total="<?= number_format($total_item, 2, '.', '') ?>">
+                         data-total="<?= number_format($total_item, 2, '.', '') ?>"
+                         data-precio="<?= number_format($precio, 2, '.', '') ?>"
+                         data-stock="<?= $stock ?>">
 
                     <label class="carrito-checkbox" title="Seleccionar">
                         <input type="checkbox" class="check-item" checked>
@@ -82,17 +90,22 @@ $total_general = array_sum(array_column($items, 'total_linea'));
                         <h3 class="tarjeta-nombre"><?= $nombre ?></h3>
 
                         <div class="tarjeta-detalles">
-                            <span class="tarjeta-cantidad">
-                                <i class="fa-solid fa-layer-group"></i>
-                                <?= $cantidad ?> uds.
-                            </span>
+                            <div class="cantidad-control">
+                                <button class="btn-cantidad btn-menos" data-id="<?= $id_prod ?>" title="Reducir cantidad">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <span class="cantidad-valor"><?= $cantidad ?></span>
+                                <button class="btn-cantidad btn-mas" data-id="<?= $id_prod ?>" title="Aumentar cantidad">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
                             <span class="tarjeta-precio-unit">
                                 <?= number_format($precio, 2, ',', '.') ?> € / ud.
                             </span>
                         </div>
 
                         <p class="tarjeta-total">
-                            Total: <strong><?= number_format($total_item, 2, ',', '.') ?> €</strong>
+                            Total: <strong class="total-linea"><?= number_format($total_item, 2, ',', '.') ?> €</strong>
                         </p>
                     </div>
 
@@ -109,6 +122,7 @@ $total_general = array_sum(array_column($items, 'total_linea'));
                         </button>
                     </div>
                 </article>
+
             <?php endforeach; ?>
         </section>
 

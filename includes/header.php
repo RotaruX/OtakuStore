@@ -31,6 +31,9 @@ if (session_status() === PHP_SESSION_NONE) {
     <?php
     elseif ($paginaActual == 'carrito.php'): ?>
         <link rel="stylesheet" href="./assets/css/carrito.css">
+    <?php
+    elseif ($paginaActual == 'pedidos.php'): ?>
+        <link rel="stylesheet" href="./assets/css/pedidos.css">
     <?php endif; ?>
 </head>
 
