@@ -1,6 +1,6 @@
 <?php
-require_once "./includes/conexion.php";
-require_once "./includes/header.php";
+require_once(__DIR__ . "/includes/conexion.php");
+require_once(__DIR__ . "/includes/header.php");
 
 $exito = false;
 $error = '';
@@ -91,4 +91,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 </main>
 
-<?php require_once "./includes/footer.php"; ?>
+<?php require_once(__DIR__ . "/includes/footer.php"); ?>

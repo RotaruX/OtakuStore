@@ -1,5 +1,5 @@
 <?php
-require_once("includes/conexion.php");
+require_once(__DIR__ . "/includes/conexion.php");
 if (session_status() === PHP_SESSION_NONE) session_start();
 
 $tipo    = $_GET['tipo']    ?? '';          
@@ -52,7 +52,7 @@ function urlPagina(int $p, string $tipo, string $q): string {
     return 'tienda.php?' . http_build_query($params);
 }
 
-require_once("includes/header.php");
+require_once(__DIR__ . "/includes/header.php");
 ?>
 
 <main class="tienda-main">
@@ -131,9 +131,9 @@ require_once("includes/header.php");
                              data-id="<?= $id ?>">
                         <div class="tarjeta-imagen-wrap">
                             <?php if ($imagen !== ''): ?>
-                                <img src="./assets/img/<?= $imagen ?>"
+                                <img src="<?= BASE_URL ?>assets/img/<?= $imagen ?>"
                                      alt="<?= $nombre ?>"
-                                     onerror="this.src='./assets/img/placeholder.png'">
+                                     onerror="this.src='<?= BASE_URL ?>assets/img/placeholder.png'">
                             <?php else: ?>
                                 <div class="sin-imagen">
                                     <i class="fa-solid fa-image"></i>
@@ -226,5 +226,5 @@ $sesionActiva  = isset($_SESSION['id_usuario']) ? 'true' : 'false';
 <script>
     const SESION_ACTIVA = <?= $sesionActiva ?>;
 </script>
-<script src="./assets/js/tienda.js"></script>
-<?php require_once("includes/footer.php"); ?>
+<script src="<?= BASE_URL ?>assets/js/tienda.js"></script>
+<?php require_once(__DIR__ . "/includes/footer.php"); ?>

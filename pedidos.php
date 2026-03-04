@@ -1,5 +1,5 @@
 <?php
-require_once("includes/conexion.php");
+require_once(__DIR__ . "/includes/conexion.php");
 session_start();
 
 if (!isset($_SESSION['id_usuario'])) {
@@ -38,7 +38,7 @@ $estadoIcono = [
     'entregado'  => ['icono' => 'fa-circle-check', 'clase' => 'estado-entregado'],
 ];
 ?>
-<?php require_once("includes/header.php") ?>
+<?php require_once(__DIR__ . "/includes/header.php") ?>
 
 <main class="pedidos-page">
 
@@ -101,7 +101,7 @@ $estadoIcono = [
                         <?php foreach ($items as $item): ?>
                             <div class="pedido-item">
                                 <?php if (!empty($item['imagen'])): ?>
-                                    <img src="./assets/img/<?= htmlspecialchars($item['imagen']) ?>"
+                                    <img src="<?= BASE_URL ?>assets/img/<?= htmlspecialchars($item['imagen']) ?>"
                                          alt="<?= htmlspecialchars($item['nombre']) ?>">
                                 <?php else: ?>
                                     <div class="item-sin-imagen"><i class="fa-solid fa-image"></i></div>
@@ -132,4 +132,4 @@ $estadoIcono = [
     <?php endif; ?>
 </main>
 
-<?php require_once("includes/footer.php") ?>
+<?php require_once(__DIR__ . "/includes/footer.php") ?>

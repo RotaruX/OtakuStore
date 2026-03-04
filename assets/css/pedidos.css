@@ -150,7 +150,6 @@
 .estado-enviado    { background-color: #e2d9f3; color: #3d1a8a; }
 .estado-entregado  { background-color: #d1e7dd; color: #0a3622; }
 
-/* Barra de progreso de estado */
 .pedido-progreso {
     display: flex;
     align-items: center;
@@ -207,7 +206,6 @@
     background-color: #FFD447;
 }
 
-/* Productos del pedido */
 .pedido-items {
     padding: 0 20px;
     display: flex;

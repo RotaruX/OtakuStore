@@ -1,5 +1,5 @@
 <?php
-require_once("includes/conexion.php");
+require_once(__DIR__ . "/includes/conexion.php");
 session_start();
 
 // Redirigir al login si no está autenticado
@@ -31,7 +31,7 @@ $items = $stmt->fetchAll();
 
 $total_general = array_sum(array_column($items, 'total_linea'));
 ?>
-<?php require_once("includes/header.php") ?>
+<?php require_once(__DIR__ . "/includes/header.php") ?>
 
 <main class="carrito-page">
 
@@ -80,7 +80,7 @@ $total_general = array_sum(array_column($items, 'total_linea'));
 
                     <div class="tarjeta-imagen">
                         <?php if (!empty($imagen)): ?>
-                            <img src="./assets/img/<?= $imagen ?>" alt="<?= $nombre ?>">
+                            <img src="<?= BASE_URL ?>assets/img/<?= $imagen ?>" alt="<?= $nombre ?>">
                         <?php else: ?>
                             <div class="sin-imagen"><i class="fa-solid fa-image"></i></div>
                         <?php endif; ?>
@@ -147,5 +147,5 @@ $total_general = array_sum(array_column($items, 'total_linea'));
     <?php endif; ?>
 </main>
 
-<script src="./assets/js/carrito_page.js"></script>
-<?php require_once("includes/footer.php") ?>
+<script src="<?= BASE_URL ?>assets/js/carrito_page.js"></script>
+<?php require_once(__DIR__ . "/includes/footer.php") ?>

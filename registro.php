@@ -1,5 +1,5 @@
 <?php
-require_once("./includes/conexion.php");
+require_once(__DIR__ . "/includes/conexion.php");
 session_start();
 
 // Si ya está logueado, redirigir
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<?php require_once("includes/header.php") ?>
+<?php require_once(__DIR__ . "/includes/header.php") ?>
 
 <main class="login-page">
     <section class="login-container">
@@ -87,9 +87,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit" class="btn">REGISTRARSE</button>
         </form>
 
-        <p class="enlace-alterno">¿Ya tienes cuenta? <a href="login.php">Inicia Sesión</a></p>
+        <p class="enlace-alterno">¿Ya tienes cuenta? <a href="./login.php">Inicia Sesión</a></p>
     </section>
 </main>
 
-<script src="./assets/js/validacion.js"></script>
-<?php require_once("includes/footer.php") ?>
+<script src="<?= BASE_URL ?>assets/js/validacion.js"></script>
+<?php require_once(__DIR__ . "/includes/footer.php") ?>

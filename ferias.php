@@ -1,4 +1,7 @@
-<?php require_once "./includes/header.php"; ?>
+<?php
+require_once(__DIR__ . '/config/parametros.php');
+require_once(__DIR__ . '/includes/header.php');
+?>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/carousel/carousel.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/carousel/carousel.dots.css">
@@ -178,4 +181,4 @@
     ).init();
 </script>
 
-<?php require_once "./includes/footer.php"; ?>
+<?php require_once(__DIR__ . "/includes/footer.php"); ?>

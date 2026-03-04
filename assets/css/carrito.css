@@ -231,7 +231,6 @@
   color: #666;
 }
 
-/* Selector de cantidad */
 .cantidad-control {
   display: flex;
   align-items: center;
@@ -456,7 +455,6 @@
 }
 
 /* Vista tablet */
-
 @media screen and (min-width: 768px) {
   .carrito-page {
     padding: 30px 28px 60px;
