@@ -1,0 +1,337 @@
+/* Vista móvil */
+
+.producto-page {
+    padding: 20px 16px 50px;
+    background-color: #f5f5f5;
+    min-height: 80vh;
+}
+
+.producto-breadcrumb {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.producto-breadcrumb a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.producto-breadcrumb a:hover {
+    color: #212529;
+}
+
+.producto-breadcrumb span {
+    color: #bbb;
+}
+
+.producto-breadcrumb .actual {
+    color: #212529;
+    font-weight: 700;
+}
+
+.producto-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.producto-imagen-wrap {
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.producto-imagen-wrap img {
+    width: 100%;
+    max-width: 340px;
+    max-height: 340px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.producto-imagen-wrap:hover img {
+    transform: scale(1.05);
+}
+
+.producto-categoria-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: #ffd447;
+    color: #212529;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.producto-info {
+    padding: 28px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.producto-nombre {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #212529;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.producto-precio {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #212529;
+    margin: 0;
+}
+
+.producto-stock {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.producto-stock.disponible {
+    color: #27ae60;
+}
+
+.producto-stock.agotado {
+    color: #c0392b;
+}
+
+.producto-stock i {
+    font-size: 0.85rem;
+}
+
+.producto-separador {
+    height: 1px;
+    background-color: #f0f0f0;
+    border: none;
+    margin: 0;
+}
+
+.producto-descripcion-titulo {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin: 0;
+}
+
+.producto-descripcion {
+    font-size: 0.97rem;
+    color: #555;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.producto-acciones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.btn-producto-anadir {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffd447;
+    color: #212529;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-producto-anadir:hover {
+    background-color: #e6b93c;
+    transform: translateY(-2px);
+}
+
+.btn-producto-anadir.btn-añadido {
+    background-color: #27ae60;
+    color: #fff;
+    transform: scale(1.02);
+}
+
+.btn-producto-sin-stock {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-volver-tienda {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 20px;
+    background-color: #212529;
+    color: #ffd447;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.25s, transform 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-volver-tienda:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.banner-anadir-confirmacion {
+    background: #d1e7dd;
+    border: 2px solid #a3cfbb;
+    border-radius: 14px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    animation: aparecerBanner 0.4s ease;
+    display: none;
+}
+
+.banner-anadir-confirmacion.visible {
+    display: flex;
+}
+
+@keyframes aparecerBanner {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.banner-anadir-confirmacion > i {
+    font-size: 2rem;
+    color: #0a3622;
+    flex-shrink: 0;
+}
+
+.banner-anadir-confirmacion p {
+    font-size: 0.95rem;
+    color: #0a3622;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Vista tablet */
+@media screen and (min-width: 768px) {
+    .producto-page {
+        padding: 30px 30px 60px;
+    }
+
+    .producto-card {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .producto-imagen-wrap {
+        width: 45%;
+        flex-shrink: 0;
+        border-bottom: none;
+        border-right: 1px solid #f0f0f0;
+        padding: 40px 30px;
+    }
+
+    .producto-imagen-wrap img {
+        max-width: 100%;
+        max-height: 400px;
+    }
+
+    .producto-info {
+        flex: 1;
+        padding: 36px 32px;
+    }
+
+    .producto-acciones {
+        flex-direction: row;
+    }
+
+    .btn-producto-anadir,
+    .btn-producto-sin-stock {
+        flex: 1;
+    }
+
+    .btn-volver-tienda {
+        width: auto;
+        flex-shrink: 0;
+    }
+}
+
+/* Vista escritorio */
+@media screen and (min-width: 1024px) {
+    .producto-page {
+        padding: 40px 60px 80px;
+    }
+
+    .producto-imagen-wrap {
+        width: 42%;
+        padding: 50px 40px;
+    }
+
+    .producto-imagen-wrap img {
+        max-height: 460px;
+    }
+
+    .producto-nombre {
+        font-size: 1.8rem;
+    }
+
+    .producto-precio {
+        font-size: 2.4rem;
+    }
+
+    .producto-info {
+        padding: 44px 44px;
+        gap: 22px;
+    }
+}

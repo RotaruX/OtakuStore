@@ -1,5 +1,18 @@
 /* Vista móvil */
 
+.tarjeta-link,
+.tarjeta-link *,
+.tarjeta-link h3,
+.tarjeta-link .precio {
+  text-decoration: none;
+  color: inherit;
+}
+
+.tarjeta-link {
+  display: block;
+}
+
+
 .tienda-hero {
   width: 100%;
   min-height: 35vh;
@@ -201,6 +214,7 @@
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin: 0;

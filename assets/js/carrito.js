@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("accion", "añadir");
         formData.append("id_producto", idProducto);
 
-        const res = await fetch("./includes/carrito_api.php", {
+        const res = await fetch(BASE_URL + "includes/carrito_api.php", {
           method: "POST",
           body: formData,
         });
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await res.json();
 
         if (data.logueado === false) {
-          window.location.href = "./login.php";
+          window.location.href = BASE_URL + "login.php";
           return;
         }
 

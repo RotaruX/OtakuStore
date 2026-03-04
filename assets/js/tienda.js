@@ -1,14 +1,11 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
-
   const botonesAnadir = document.querySelectorAll(".btn-anadir[data-id]");
 
   botonesAnadir.forEach((btn) => {
     btn.addEventListener("click", async () => {
       // Verificar sesión (variable inyectada por PHP)
       if (!SESION_ACTIVA) {
-        window.location.href = "./login.php?redir=tienda";
+        window.location.href = BASE_URL + "login.php?redir=tienda";
         return;
       }
 
@@ -23,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         formData.append("accion", "añadir");
         formData.append("id_producto", idProducto);
 
-        const res = await fetch("./includes/carrito_api.php", {
+        const res = await fetch(BASE_URL + "includes/carrito_api.php", {
           method: "POST",
           body: formData,
         });
@@ -31,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await res.json();
 
         if (data.logueado === false) {
-          window.location.href = "./login.php?redir=tienda";
+          window.location.href = BASE_URL + "login.php?redir=tienda";
           return;
         }
 
@@ -75,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (ancho < 768) maximo = 6;
     else if (ancho < 1024) maximo = 10;
-    else maximo = 12; 
+    else maximo = 12;
 
     tarjetas.forEach((t, i) => {
       if (i < maximo) {

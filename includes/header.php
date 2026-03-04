@@ -35,6 +35,9 @@ require_once(__DIR__ . '/../config/parametros.php');
     <?php
     elseif ($paginaActual == 'pedidos.php'): ?>
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/pedidos.css">
+    <?php
+    elseif ($paginaActual == 'producto.php'): ?>
+        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/producto.css">
     <?php endif; ?>
 </head>
 

@@ -126,9 +126,10 @@ require_once(__DIR__ . "/includes/header.php");
                     $stock    = intval($p['stock']);
                     $catLabel = $p['categoria'] === 'Cómic' ? 'Manga' : 'Funko';
                 ?>
-                    <article class="tarjeta tienda-tarjeta"
-                             data-index="<?= $i ?>"
-                             data-id="<?= $id ?>">
+                    <a href="<?= BASE_URL ?>producto.php?id=<?= $id ?>"
+                       class="tarjeta tienda-tarjeta tarjeta-link"
+                       data-index="<?= $i ?>"
+                       data-id="<?= $id ?>">
                         <div class="tarjeta-imagen-wrap">
                             <?php if ($imagen !== ''): ?>
                                 <img src="<?= BASE_URL ?>assets/img/<?= $imagen ?>"
@@ -147,16 +148,18 @@ require_once(__DIR__ . "/includes/header.php");
                             <?php if ($stock > 0): ?>
                                 <button class="btn btn-anadir"
                                         data-id="<?= $id ?>"
-                                        data-nombre="<?= $nombre ?>">
+                                        data-nombre="<?= $nombre ?>"
+                                        onclick="event.preventDefault(); event.stopPropagation();">
                                     <i class="fa-solid fa-cart-plus"></i> Añadir al carrito
                                 </button>
                             <?php else: ?>
-                                <button class="btn btn-sin-stock" disabled>
+                                <button class="btn btn-sin-stock" disabled
+                                        onclick="event.preventDefault(); event.stopPropagation();">
                                     Sin stock
                                 </button>
                             <?php endif; ?>
                         </div>
-                    </article>
+                    </a>
                 <?php endforeach; ?>
             </div>
 
