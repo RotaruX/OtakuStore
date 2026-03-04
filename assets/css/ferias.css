@@ -1,0 +1,331 @@
+/* Vista móvil */
+
+.ferias-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 40vh;
+    color: white;
+    overflow: hidden;
+    padding: 40px 20px;
+    background-image: url(../img/ferias.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #212529;
+}
+
+.ferias-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.ferias-hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.ferias-hero-content h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.ferias-hero-content p {
+    font-size: 1rem;
+    max-width: 500px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.ferias-seccion {
+    padding: 50px 20px 60px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.ferias-titulo {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    color: #212529;
+}
+
+.ferias-titulo::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #FFD447;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.ferias-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.feria-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.feria-card-header {
+    background: linear-gradient(135deg, #212529, #3a3f47);
+    padding: 24px 20px 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.feria-icono {
+    font-size: 2rem;
+    color: #FFD447;
+}
+
+.feria-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+.feria-badge.proxima {
+    background-color: #FFD447;
+    color: #212529;
+}
+
+.feria-badge.disponible {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.feria-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.feria-card-body h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #212529;
+    margin: 0;
+}
+
+.feria-lugar,
+.feria-direccion,
+.feria-fecha {
+    font-size: 0.9rem;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 0;
+}
+
+.feria-direccion {
+    font-size: 0.82rem;
+    color: #888;
+    font-style: italic;
+}
+
+.feria-lugar i,
+.feria-direccion i,
+.feria-fecha i {
+    color: #FFD447;
+    width: 14px;
+    text-align: center;
+}
+
+.feria-desc {
+    font-size: 0.88rem;
+    color: #777;
+    line-height: 1.6;
+    margin: 6px 0 0;
+}
+
+/* Vista tablet */
+@media screen and (min-width: 768px) {
+
+    .ferias-hero {
+        min-height: 45vh;
+    }
+
+    .ferias-hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .ferias-hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .ferias-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+
+    .ferias-titulo {
+        font-size: 1.9rem;
+    }
+}
+
+.ferias-galeria {
+    padding: 10px 20px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#myCarousel {
+    --f-transition-duration: 1.5s;
+    --f-arrow-pos: 30px;
+    --f-arrow-width: 50px;
+    --f-arrow-height: 50px;
+    --f-arrow-color: rgba(255, 255, 255, 0.5);
+    --f-arrow-bg: rgba(255, 255, 255, 0.2);
+    --f-arrow-border-radius: 50%;
+    --f-arrow-svg-stroke-width: 3;
+    --f-carousel-dots-top: auto;
+    --f-carousel-dots-bottom: 0;
+    --f-carousel-dot-width: 12px;
+    --f-carousel-dot-height: 12px;
+    --f-carousel-dot-transition: all 0.3s ease;
+
+    margin: 0 auto;
+    max-width: 100%;
+    color: #eee;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+}
+
+#myCarousel .f-carousel__slide {
+    position: relative;
+    overflow: hidden;
+    height: 320px;
+}
+
+#myCarousel .f-carousel__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 7s ease, opacity 2s ease;
+    will-change: transform, opacity;
+}
+
+#myCarousel .f-carousel__slide.is-selected img {
+    transform: scale(1);
+    opacity: 1;
+}
+
+#myCarousel .f-carousel__slide .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+    z-index: 1;
+}
+
+#myCarousel .f-carousel__slide .caption {
+    position: absolute;
+    bottom: 30px;
+    left: 25px;
+    color: #eee;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 1s ease 0.5s;
+    z-index: 2;
+}
+
+#myCarousel .f-carousel__slide.is-selected .caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Vista tablet */
+@media screen and (min-width: 768px) {
+
+    #myCarousel .f-carousel__slide {
+        height: 420px;
+    }
+
+    #myCarousel .f-carousel__slide .caption {
+        bottom: 35px;
+        left: 35px;
+    }
+}
+
+/* Vista escritorio */
+@media screen and (min-width: 1024px) {
+
+    .ferias-hero {
+        min-height: 50vh;
+    }
+
+    .ferias-hero-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .ferias-hero-content p {
+        font-size: 1.15rem;
+        max-width: 600px;
+    }
+
+    .ferias-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
+    .feria-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14);
+    }
+
+    .ferias-seccion {
+        padding: 70px 40px 80px;
+    }
+
+    .ferias-galeria {
+        padding: 10px 40px 80px;
+    }
+
+    #myCarousel .f-carousel__slide {
+        height: 520px;
+    }
+
+    #myCarousel .f-carousel__slide .caption {
+        bottom: 40px;
+        left: 40px;
+    }
+}
