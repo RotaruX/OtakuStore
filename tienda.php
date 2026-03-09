@@ -228,6 +228,7 @@ $sesionActiva  = isset($_SESSION['id_usuario']) ? 'true' : 'false';
 ?>
 <script>
     const SESION_ACTIVA = <?= $sesionActiva ?>;
+    const BASE_URL      = "<?= BASE_URL ?>";
 </script>
 <script src="<?= BASE_URL ?>assets/js/tienda.js"></script>
 <?php require_once(__DIR__ . "/includes/footer.php"); ?>

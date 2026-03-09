@@ -75,5 +75,8 @@ require_once(__DIR__ . '/includes/header.php');
     </section>
 </main>
 
+<script>
+    const BASE_URL = "<?= BASE_URL ?>";
+</script>
 <script src="<?= BASE_URL ?>assets/js/carrito.js"></script>
 <?php require_once(__DIR__ . "/includes/footer.php") ?>

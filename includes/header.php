@@ -48,9 +48,9 @@ require_once(__DIR__ . '/../config/parametros.php');
         <section class="menu" id="menu">
             <ul>
                 <li><a href="<?= BASE_URL ?>index.php" class="<?= $paginaActual == 'index.php' ? 'activo' : '' ?>">Inicio</a></li>
-                <li><a href="<?= BASE_URL ?>contacto.php" class="<?= $paginaActual == 'contacto.php' ? 'activo' : '' ?>">Contactanos</a></li>
                 <li><a href="<?= BASE_URL ?>tienda.php" class="<?= $paginaActual == 'tienda.php' ? 'activo' : '' ?>">Tienda</a></li>
                 <li><a href="<?= BASE_URL ?>ferias.php" class="<?= $paginaActual == 'ferias.php' ? 'activo' : '' ?>">Ferias</a></li>
+                <li><a href="<?= BASE_URL ?>contacto.php" class="<?= $paginaActual == 'contacto.php' ? 'activo' : '' ?>">Contactanos</a></li>
             </ul>
             <section class="usuarios">
                 <?php if (isset($_SESSION['id_usuario'])): ?>

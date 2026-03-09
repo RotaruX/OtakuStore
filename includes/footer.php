@@ -3,7 +3,7 @@
             <h4>Enlaces</h4>
             <a href="./legal/aviso_legal.html">Aviso Legal</a>
             <a href="./legal/politica_cookies.html">Política de Cookies</a>
-            <a href="./legal/politica_privacidad.html">Contacto</a>
+            <a href="./legal/politica_privacidad.html">Política de Privacidad</a>
         </section>
 
         <section class="footer-social">
