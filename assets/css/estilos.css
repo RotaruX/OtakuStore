@@ -156,49 +156,6 @@ footer h4 {
 /* Vista tablet */
 @media screen and (min-width: 768px) {
 
-    header {
-        padding: 15px 30px;
-    }
-
-    header > a > img {
-        width: 160px;
-    }
-
-    .hamburguesa {
-        display: none;
-    }
-
-    .menu {
-        position: static;
-        display: flex;
-        flex-direction: row;
-        background-color: transparent;
-        padding: 0;
-        box-shadow: none;
-        justify-content: flex-end;
-        width: auto;
-        gap: 20px;
-    }
-
-    .menu ul {
-        flex-direction: row;
-        width: auto;
-    }
-
-    .menu > ul > li > a {
-        font-size: 1.2rem;
-        width: auto;
-        background-color: transparent;
-        padding: 8px 12px;
-    }
-
-    .usuarios {
-        width: auto;
-        margin-top: 0;
-        font-size: 1.9rem;
-        gap: 15px;
-    }
-
     footer {
         flex-direction: row;
         justify-content: space-around;
@@ -226,14 +183,40 @@ footer h4 {
         width: 200px;
     }
 
+    .hamburguesa {
+        display: none;
+    }
+
     .menu {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+        justify-content: flex-end;
+        width: auto;
         gap: 30px;
+    }
+
+    .menu ul {
+        flex-direction: row;
+        width: auto;
     }
 
     .menu > ul > li > a {
         font-size: 1.3rem;
+        width: auto;
+        background-color: transparent;
         padding: 10px 20px;
         transition: all 0.3s ease;
+    }
+
+    .usuarios {
+        width: auto;
+        margin-top: 0;
+        font-size: 1.9rem;
+        gap: 15px;
     }
 
     header > a > img:hover {
