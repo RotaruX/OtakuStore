@@ -12,7 +12,6 @@
   display: block;
 }
 
-
 .tienda-hero {
   width: 100%;
   min-height: 35vh;
@@ -382,10 +381,6 @@
   margin-top: 12px;
   font-size: 0.85rem;
   color: #888;
-}
-
-.tienda-tarjeta.oculta-tablet {
-  display: none;
 }
 
 /* Vista tablet */

@@ -1,4 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /* 1. LÍMITE DINÁMICO POR VIEWPORT (cookie)
+      • Móvil  (< 768px)  → 6 productos por página
+      • Tablet (768–1023) → 10 productos por página
+      • Desktop(≥ 1024)   → 12 productos por página */
+  function getLimiteViewport() {
+    const ancho = window.innerWidth;
+    if (ancho < 768) return 6;
+    if (ancho < 1024) return 10;
+    return 12;
+  }
+
+  const limiteVP = getLimiteViewport();
+
+  // Leer cookie actual
+  const cookieMatch = document.cookie.match(/productos_por_pagina=(\d+)/);
+  const cookieActual = cookieMatch ? parseInt(cookieMatch[1]) : null;
+
+  // Si la cookie no existe o no coincide con el viewport, actualizarla
+  if (cookieActual !== limiteVP) {
+    document.cookie = "productos_por_pagina=" + limiteVP + ";path=/;max-age=86400;SameSite=Lax";
+    // Recargar solo si PHP usó un límite diferente
+    if (typeof PRODUCTOS_POR_PAGINA !== "undefined" && PRODUCTOS_POR_PAGINA !== limiteVP) {
+      window.location.reload();
+      return;
+    }
+  }
+
+  /* 2. BOTONES AÑADIR AL CARRITO */
   const botonesAnadir = document.querySelectorAll(".btn-anadir[data-id]");
 
   botonesAnadir.forEach((btn) => {
@@ -58,35 +86,5 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.disabled = false;
       }
     });
-  });
-
-  /* 2. LÍMITE DE TARJETAS POR BREAKPOINT
-      • Móvil  (< 768px)  → 6 tarjetas visibles
-      • Tablet (768–1023) → 10 tarjetas visibles
-      • Desktop(≥ 1024)   → 12 tarjetas (todas)*/
-  const tarjetas = Array.from(document.querySelectorAll(".tienda-tarjeta"));
-
-  function aplicarLimite() {
-    const ancho = window.innerWidth;
-    let maximo;
-
-    if (ancho < 768) maximo = 6;
-    else if (ancho < 1024) maximo = 10;
-    else maximo = 12;
-
-    tarjetas.forEach((t, i) => {
-      if (i < maximo) {
-        t.classList.remove("oculta-tablet");
-      } else {
-        t.classList.add("oculta-tablet");
-      }
-    });
-  }
-
-  aplicarLimite();
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(aplicarLimite, 120);
   });
 });

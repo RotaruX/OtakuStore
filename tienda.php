@@ -6,7 +6,9 @@ $tipo    = $_GET['tipo']    ?? '';
 $q       = trim($_GET['q'] ?? '');
 $pagina  = max(1, intval($_GET['pagina'] ?? 1));
 
-$limite  = 12;
+$limitesPermitidos = [6, 10, 12];
+$limiteCookie = intval($_COOKIE['productos_por_pagina'] ?? 12);
+$limite = in_array($limiteCookie, $limitesPermitidos) ? $limiteCookie : 12;
 $offset  = ($pagina - 1) * $limite;
 
 $categoriaFiltro = '';
@@ -229,6 +231,7 @@ $sesionActiva  = isset($_SESSION['id_usuario']) ? 'true' : 'false';
 <script>
     const SESION_ACTIVA = <?= $sesionActiva ?>;
     const BASE_URL      = "<?= BASE_URL ?>";
+    const PRODUCTOS_POR_PAGINA = <?= $limite ?>;
 </script>
 <script src="<?= BASE_URL ?>assets/js/tienda.js"></script>
 <?php require_once(__DIR__ . "/includes/footer.php"); ?>
