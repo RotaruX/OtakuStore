@@ -100,7 +100,7 @@ require_once(__DIR__ . '/../includes/header_admin.php');
                 </ul>
             </div>
             <div class="admin-card-footer">
-                <a href="<?= BASE_URL ?>admin/alta_producto.php" class="admin-btn btn-productos">
+                <a href="<?= BASE_URL ?>admin/productos.php" class="admin-btn btn-productos">
                     <i class="fa-solid fa-arrow-right"></i> Ir a Productos
                 </a>
             </div>

@@ -20,6 +20,13 @@ $paginaAdmin = basename($_SERVER['PHP_SELF']);
     <title>OtakuStore - Admin</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/estilos.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin.css">
+    <?php if ($paginaAdmin == 'index.php'): ?>
+        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_index.css">
+    <?php elseif ($paginaAdmin == 'productos.php'): ?>
+        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_productos.css">
+    <?php elseif ($paginaAdmin == 'usuarios.php'): ?>
+        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_usuarios.css">
+    <?php endif; ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 
@@ -30,7 +37,7 @@ $paginaAdmin = basename($_SERVER['PHP_SELF']);
         <section class="menu" id="menu">
             <ul>
                 <li><a href="<?= BASE_URL ?>admin/index.php" class="<?= $paginaAdmin == 'index.php' ? 'activo' : '' ?>">Panel</a></li>
-                <li><a href="<?= BASE_URL ?>admin/alta_producto.php" class="<?= $paginaAdmin == 'alta_producto.php' ? 'activo' : '' ?>">Productos</a></li>
+                <li><a href="<?= BASE_URL ?>admin/productos.php" class="<?= $paginaAdmin == 'productos.php' ? 'activo' : '' ?>">Productos</a></li>
                 <li><a href="<?= BASE_URL ?>admin/usuarios.php" class="<?= $paginaAdmin == 'usuarios.php' ? 'activo' : '' ?>">Usuarios</a></li>
             </ul>
             <section class="usuarios">

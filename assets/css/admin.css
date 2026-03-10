@@ -1,4 +1,5 @@
 /* ================================================
+   Admin - Estilos compartidos
    Vista Móvil
    ================================================ */
 
@@ -22,131 +23,6 @@
   font-size: 1rem;
   color: #777;
   font-weight: 500;
-}
-
-
-.admin-secciones {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 25px 15px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-
-.admin-card {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.admin-card-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 22px 20px 14px;
-}
-
-.admin-card-icono {
-  width: 50px;
-  height: 50px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.4rem;
-  color: #fff;
-  flex-shrink: 0;
-}
-
-.admin-card-icono.pedidos {
-  background: linear-gradient(135deg, #6c63ff, #4834d4);
-}
-
-.admin-card-icono.usuarios {
-  background: linear-gradient(135deg, #00c9a7, #00897b);
-}
-
-.admin-card-icono.productos {
-  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-}
-
-.admin-card-header h2 {
-  font-size: 1.2rem;
-  color: #212529;
-  font-weight: 700;
-}
-
-.admin-card-header h2 span {
-  display: block;
-  font-size: 0.82rem;
-  color: #777;
-  font-weight: 400;
-  margin-top: 2px;
-}
-
-
-.admin-card-body {
-  padding: 0 20px 22px;
-}
-
-.admin-acciones {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.admin-acciones li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  border-radius: 10px;
-  background: #f8f8fa;
-  font-size: 0.95rem;
-  color: #333;
-  font-weight: 500;
-  transition:
-    background 0.25s ease,
-    transform 0.2s ease;
-}
-
-.admin-acciones li i {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  flex-shrink: 0;
-}
-
-
-.admin-card.card-pedidos .admin-acciones li i {
-  background: rgba(108, 99, 255, 0.12);
-  color: #6c63ff;
-}
-
-.admin-card.card-usuarios .admin-acciones li i {
-  background: rgba(0, 201, 167, 0.12);
-  color: #00c9a7;
-}
-
-.admin-card.card-productos .admin-acciones li i {
-  background: rgba(255, 107, 107, 0.12);
-  color: #ff6b6b;
-}
-
-
-.admin-card-footer {
-  padding: 0 20px 22px;
 }
 
 .admin-btn {
@@ -205,32 +81,6 @@
   .admin-bienvenida p {
     font-size: 1.1rem;
   }
-
-  .admin-secciones {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 22px;
-    padding: 30px 25px;
-  }
-
-  .admin-card {
-    flex: 1 1 calc(50% - 11px);
-    min-width: 0;
-  }
-
-  .admin-card:last-child {
-    flex: 1 1 100%;
-  }
-
-  .admin-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  }
-
-  .admin-acciones li:hover {
-    background: #f0f0f5;
-    transform: translateX(4px);
-  }
 }
 
 /* ================================================
@@ -243,36 +93,6 @@
 
   .admin-bienvenida h1 {
     font-size: 2.3rem;
-  }
-
-  .admin-secciones {
-    flex-wrap: nowrap;
-    gap: 28px;
-    padding: 40px;
-  }
-
-  .admin-card {
-    flex: 1 1 0;
-    min-width: 0;
-  }
-
-  .admin-card:last-child {
-    flex: 1 1 0;
-  }
-
-  .admin-card-icono {
-    width: 56px;
-    height: 56px;
-    font-size: 1.5rem;
-  }
-
-  .admin-card-header h2 {
-    font-size: 1.3rem;
-  }
-
-  .admin-acciones li {
-    font-size: 1rem;
-    padding: 14px 16px;
   }
 
   .admin-btn {
