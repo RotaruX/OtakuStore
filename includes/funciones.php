@@ -157,3 +157,11 @@ function realizarPedido(PDO $conexion, int $id_usuario, array $ids_productos): a
         return ['error' => 'Error al procesar el pedido: ' . $e->getMessage()];
     }
 }
+
+// Genera la URL de paginación para la tienda, conservando los filtros activos.
+function urlPagina(int $p, string $tipo, string $q): string {
+    $params = ['pagina' => $p];
+    if ($tipo !== '') $params['tipo'] = $tipo;
+    if ($q   !== '') $params['q']    = $q;
+    return 'tienda.php?' . http_build_query($params);
+}

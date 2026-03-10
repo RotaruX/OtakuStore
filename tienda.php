@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__ . "/includes/conexion.php");
+require_once(__DIR__ . "/includes/funciones.php");
 if (session_status() === PHP_SESSION_NONE) session_start();
 
 $tipo    = $_GET['tipo']    ?? '';          
@@ -47,12 +48,7 @@ $stmt->bindValue(':offset',  $offset, PDO::PARAM_INT);
 $stmt->execute();
 $productos = $stmt->fetchAll();
 
-function urlPagina(int $p, string $tipo, string $q): string {
-    $params = ['pagina' => $p];
-    if ($tipo !== '') $params['tipo'] = $tipo;
-    if ($q   !== '') $params['q']    = $q;
-    return 'tienda.php?' . http_build_query($params);
-}
+
 
 require_once(__DIR__ . "/includes/header.php");
 ?>
