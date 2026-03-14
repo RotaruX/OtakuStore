@@ -36,14 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnConfirmar.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Eliminando...';
 
     try {
-      const formData = new FormData();
-      formData.append("accion", "eliminar");
-      formData.append("id_producto", idProductoAEliminar);
-
-      const res = await fetch(BASE_URL + "admin/api_productos.php", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(BASE_URL + "admin/borrar_producto.php?id=" + idProductoAEliminar);
 
       const data = await res.json();
 

@@ -1,0 +1,175 @@
+/* ================================================
+   Admin Editar Producto - Vista Móvil
+   ================================================ */
+
+.admin-form-wrapper {
+  padding: 0 15px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Alertas */
+.admin-alerta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  animation: alertaIn 0.3s ease;
+}
+
+@keyframes alertaIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-alerta i {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.admin-alerta-ok {
+  background: rgba(0, 201, 167, 0.12);
+  color: #00897b;
+  border: 1px solid rgba(0, 201, 167, 0.3);
+}
+
+.admin-alerta-error {
+  background: rgba(255, 107, 107, 0.12);
+  color: #ee5a24;
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* Formulario */
+.admin-form {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.admin-form-grupo {
+  margin-bottom: 20px;
+}
+
+.admin-form-grupo label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #212529;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.admin-form-grupo input,
+.admin-form-grupo select,
+.admin-form-grupo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #e8e8e8;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: #333;
+  background: #fafafa;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
+}
+
+.admin-form-grupo input:focus,
+.admin-form-grupo select:focus,
+.admin-form-grupo textarea:focus {
+  outline: none;
+  border-color: #6c63ff;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+  background: #fff;
+}
+
+.admin-form-grupo textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.admin-form-grupo select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+/* Acciones del formulario */
+.admin-form-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.admin-form-acciones .admin-btn {
+  padding: 14px;
+  font-size: 0.95rem;
+}
+
+.admin-form-acciones .btn-cancelar {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.admin-form-acciones .btn-cancelar:hover {
+  background: #ccc;
+}
+
+/* ================================================
+   Vista Tablet
+   ================================================ */
+@media screen and (min-width: 768px) {
+  .admin-form-wrapper {
+    padding: 0 25px 50px;
+  }
+
+  .admin-form {
+    padding: 32px 30px;
+  }
+
+  .admin-form-acciones {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .admin-form-acciones .admin-btn {
+    width: auto;
+    padding: 12px 28px;
+  }
+}
+
+/* ================================================
+   Vista Escritorio
+   ================================================ */
+@media screen and (min-width: 1024px) {
+  .admin-form-wrapper {
+    padding: 0 40px 60px;
+  }
+
+  .admin-form {
+    padding: 40px 36px;
+  }
+
+  .admin-form-grupo input,
+  .admin-form-grupo select,
+  .admin-form-grupo textarea {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+}
