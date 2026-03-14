@@ -18,6 +18,7 @@ $paginaAdmin = basename($_SERVER['PHP_SELF']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OtakuStore - Admin</title>
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>assets/img/Logo.png">
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/estilos.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin.css">
     <?php if ($paginaAdmin == 'index.php'): ?>
