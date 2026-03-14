@@ -29,6 +29,8 @@ $paginaAdmin = basename($_SERVER['PHP_SELF']);
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_usuarios.css">
     <?php elseif ($paginaAdmin == 'editar_producto.php'): ?>
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_editar_producto.css">
+    <?php elseif ($paginaAdmin == 'nuevo_producto.php'): ?>
+        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_añadir_producto.css">
     <?php endif; ?>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
