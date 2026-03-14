@@ -43,22 +43,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Los campos nombre, categoría y precio son obligatorios.';
     } else {
         try {
-            $stmt = $conexion->prepare("UPDATE productos SET nombre = :nombre, categoria = :categoria, precio = :precio, stock = :stock, imagen = :imagen, descripcion = :descripcion WHERE id_producto = :id");
-            $stmt->execute([
-                ':nombre'      => $nombre,
-                ':categoria'   => $categoria,
-                ':precio'      => $precio,
-                ':stock'       => $stock,
-                ':imagen'      => $imagen,
-                ':descripcion' => $descripcion,
-                ':id'          => $id
-            ]);
-            $mensaje = 'Producto actualizado correctamente.';
+            // Manejar subida de imagen nueva si se proporcionó
+            if (isset($_FILES['imagen_archivo']) && $_FILES['imagen_archivo']['error'] === UPLOAD_ERR_OK) {
+                $nombre_archivo = $_FILES['imagen_archivo']['name'];
+                $ruta_temporal  = $_FILES['imagen_archivo']['tmp_name'];
+                
+                // Generar un nombre único para evitar colisiones
+                $extension = pathinfo($nombre_archivo, PATHINFO_EXTENSION);
+                $nombre_unico = uniqid('prod_') . '.' . $extension;
+                $ruta_destino = __DIR__ . '/../assets/img/' . $nombre_unico;
 
-            // Recargar datos actualizados
-            $stmt = $conexion->prepare("SELECT * FROM productos WHERE id_producto = :id");
-            $stmt->execute([':id' => $id]);
-            $producto = $stmt->fetch();
+                if (move_uploaded_file($ruta_temporal, $ruta_destino)) {
+                    $imagen = $nombre_unico;
+                } else {
+                    $error = "Error al mover la imagen subida.";
+                }
+            } else {
+                // Si no se subió una nueva imagen, mantener el nombre actual (pasado en input hidden si es necesario, o usando el valor de la BD)
+                $imagen = $_POST['imagen_actual'] ?? $producto['imagen'];
+            }
+
+            if (empty($error)) {
+                $stmt = $conexion->prepare("UPDATE productos SET nombre = :nombre, categoria = :categoria, precio = :precio, stock = :stock, imagen = :imagen, descripcion = :descripcion WHERE id_producto = :id");
+                $stmt->execute([
+                    ':nombre'      => $nombre,
+                    ':categoria'   => $categoria,
+                    ':precio'      => $precio,
+                    ':stock'       => $stock,
+                    ':imagen'      => $imagen,
+                    ':descripcion' => $descripcion,
+                    ':id'          => $id
+                ]);
+                $mensaje = 'Producto actualizado correctamente.';
+
+                // Recargar datos actualizados
+                $stmt = $conexion->prepare("SELECT * FROM productos WHERE id_producto = :id");
+                $stmt->execute([':id' => $id]);
+                $producto = $stmt->fetch();
+            }
         } catch (PDOException $e) {
             $error = 'Error al actualizar: ' . $e->getMessage();
         }
@@ -86,39 +108,72 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         <?php endif; ?>
 
-        <form method="POST" class="admin-form">
+        <form method="POST" class="admin-form" enctype="multipart/form-data">
 
-            <div class="admin-form-grupo">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" value="<?= htmlspecialchars($producto['nombre']) ?>" required>
-            </div>
+            <div class="form-grid-layout">
+                <div class="form-columna-principal">
+                    <div class="admin-form-grupo">
+                        <label for="nombre">Nombre del Producto</label>
+                        <input type="text" id="nombre" name="nombre" value="<?= htmlspecialchars($producto['nombre']) ?>" placeholder="Ej: Funko Pop Goku" required>
+                    </div>
 
-            <div class="admin-form-grupo">
-                <label for="categoria">Categoría</label>
-                <select id="categoria" name="categoria" required>
-                    <option value="Funko" <?= $producto['categoria'] === 'Funko' ? 'selected' : '' ?>>Funko</option>
-                    <option value="Cómic" <?= $producto['categoria'] === 'Cómic' ? 'selected' : '' ?>>Manga</option>
-                </select>
-            </div>
+                    <div class="admin-form-grupo">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="descripcion" rows="6" placeholder="Detalles del producto..."><?= htmlspecialchars($producto['descripcion'] ?? '') ?></textarea>
+                    </div>
 
-            <div class="admin-form-grupo">
-                <label for="precio">Precio (€)</label>
-                <input type="number" id="precio" name="precio" step="0.01" min="0.01" value="<?= htmlspecialchars($producto['precio']) ?>" required>
-            </div>
+                    <div class="form-fila-doble">
+                        <div class="admin-form-grupo">
+                            <label for="precio">Precio (€)</label>
+                            <div class="input-con-icono">
+                                <i class="fa-solid fa-euro-sign"></i>
+                                <input type="number" id="precio" name="precio" step="0.01" min="0.01" value="<?= htmlspecialchars($producto['precio']) ?>" required>
+                            </div>
+                        </div>
 
-            <div class="admin-form-grupo">
-                <label for="stock">Stock</label>
-                <input type="number" id="stock" name="stock" min="0" value="<?= intval($producto['stock']) ?>">
-            </div>
+                        <div class="admin-form-grupo">
+                            <label for="stock">Stock</label>
+                            <div class="input-con-icono">
+                                <i class="fa-solid fa-boxes-stacked"></i>
+                                <input type="number" id="stock" name="stock" min="0" value="<?= intval($producto['stock']) ?>">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="admin-form-grupo">
-                <label for="imagen">Imagen (nombre del archivo)</label>
-                <input type="text" id="imagen" name="imagen" value="<?= htmlspecialchars($producto['imagen'] ?? '') ?>">
-            </div>
+                <div class="form-columna-lateral">
+                    <div class="admin-form-grupo">
+                        <label>Imagen Actual</label>
+                        <div class="imagen-preview-container">
+                            <?php if (!empty($producto['imagen'])): ?>
+                                <img src="<?= BASE_URL ?>assets/img/<?= htmlspecialchars($producto['imagen']) ?>" alt="Imagen actual del producto" class="imagen-preview" id="previewImg">
+                            <?php else: ?>
+                                <div class="imagen-placeholder" id="previewPlaceholder">
+                                    <i class="fa-solid fa-image"></i>
+                                    <span>Sin imagen</span>
+                                </div>
+                                <img src="" alt="Previsualización" class="imagen-preview oculta" id="previewImg">
+                            <?php endif; ?>
+                        </div>
+                    </div>
 
-            <div class="admin-form-grupo">
-                <label for="descripcion">Descripción</label>
-                <textarea id="descripcion" name="descripcion" rows="5"><?= htmlspecialchars($producto['descripcion'] ?? '') ?></textarea>
+                    <div class="admin-form-grupo">
+                        <label for="imagen_archivo" class="file-upload-label">
+                            <i class="fa-solid fa-cloud-arrow-up"></i> Cambiar Imagen
+                            <input type="file" id="imagen_archivo" name="imagen_archivo" accept="image/jpeg, image/png, image/webp" class="file-upload-input" onchange="previewFile()">
+                        </label>
+                        <input type="hidden" name="imagen_actual" value="<?= htmlspecialchars($producto['imagen'] ?? '') ?>">
+                        <small class="form-nota">Formatos: JPG, PNG, WEBP. Max: 2MB.</small>
+                    </div>
+
+                    <div class="admin-form-grupo">
+                        <label for="categoria">Categoría</label>
+                        <select id="categoria" name="categoria" required>
+                            <option value="Funko" <?= $producto['categoria'] === 'Funko' ? 'selected' : '' ?>>Funko</option>
+                            <option value="Cómic" <?= $producto['categoria'] === 'Cómic' ? 'selected' : '' ?>>Cómic</option>
+                        </select>
+                    </div>
+                </div>
             </div>
 
             <div class="admin-form-acciones">
@@ -133,5 +188,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </section>
 </main>
+
+<script>
+function previewFile() {
+    const preview = document.getElementById('previewImg');
+    const file = document.getElementById('imagen_archivo').files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener("load", function () {
+        preview.src = reader.result;
+        preview.classList.remove('oculta');
+        const placeholder = document.getElementById('previewPlaceholder');
+        if (placeholder) {
+            placeholder.style.display = 'none';
+        }
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
+</script>
 
 <?php require_once(__DIR__ . '/../includes/footer.php'); ?>
