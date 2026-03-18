@@ -39,12 +39,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!in_array($extension_minusculas, $formatos_permitidos)) {
                 $error = "Formato de imagen no válido. Solo se permiten JPG, PNG y WEBP.";
             } else {
-                // Generar nombre en base a fecha/hora para no sobreescribir
-                $nombre_unico = uniqid('prod_nuevo_') . '.' . $extension;
-                $ruta_destino = __DIR__ . '/../assets/img/' . $nombre_unico;
+                // Generar nombre basado en el nombre del producto
+                $nombre_limpio = mb_strtolower($nombre, 'UTF-8');
+                $nombre_limpio = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $nombre_limpio);
+                $nombre_limpio = preg_replace('/[^a-z0-9\s]/', '', $nombre_limpio);
+                $nombre_limpio = preg_replace('/\s+/', '_', trim($nombre_limpio));
+                $nombre_archivo_final = $nombre_limpio . '.' . $extension;
+                $ruta_destino = __DIR__ . '/../assets/img/' . $nombre_archivo_final;
 
                 if (move_uploaded_file($ruta_temporal, $ruta_destino)) {
-                    $imagen = $nombre_unico;
+                    $imagen = $nombre_archivo_final;
                 } else {
                     $error = "Fallo al mover la imagen al directorio destino.";
                 }
