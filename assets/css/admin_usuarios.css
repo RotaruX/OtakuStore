@@ -1,0 +1,504 @@
+/* ================================================
+   Admin Usuarios - Vista Móvil
+   ================================================ */
+
+.admin-tabla-wrapper {
+  padding: 0 15px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-tabla-top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.admin-tabla-contador {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.admin-btn.btn-sm {
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  width: auto;
+  border-radius: 8px;
+}
+
+.admin-tabla-scroll {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.admin-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 0.9rem;
+}
+
+.admin-tabla thead {
+  background: #212529;
+  color: #fff;
+}
+
+.admin-tabla th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.admin-tabla td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+  vertical-align: middle;
+}
+
+.admin-tabla tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-tabla tbody tr:hover {
+  background-color: #eefbf6;
+}
+
+.admin-tabla-vacia {
+  text-align: center;
+  padding: 40px 20px !important;
+  color: #999;
+  font-size: 1rem;
+}
+
+/* Badges de rol */
+.admin-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-admin {
+  background: rgba(0, 201, 167, 0.12);
+  color: #00897b;
+}
+
+.badge-cliente {
+  background: rgba(108, 99, 255, 0.12);
+  color: #4834d4;
+}
+
+/* Botones de acciones */
+.admin-acciones-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-btn-accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-editar {
+  background: rgba(0, 201, 167, 0.12);
+  color: #00897b;
+}
+
+.btn-editar:hover {
+  background: #00c9a7;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.btn-eliminar {
+  background: rgba(255, 107, 107, 0.12);
+  color: #ee5a24;
+}
+
+.btn-eliminar:hover {
+  background: #ff6b6b;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* ================================================
+   Modal de confirmación
+   ================================================ */
+
+.admin-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admin-modal-overlay.visible {
+  display: flex;
+}
+
+.admin-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 24px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  animation: modalIn 0.25s ease;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.admin-modal-header {
+  margin-bottom: 16px;
+}
+
+.admin-modal-header i {
+  font-size: 2.5rem;
+  color: #e74c3c;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.admin-modal-header h3 {
+  font-size: 1.3rem;
+  color: #212529;
+  font-weight: 700;
+}
+
+.admin-modal-texto {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.admin-modal-botones {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.admin-btn.btn-cancelar {
+  background: #e0e0e0;
+  color: #333;
+  flex: 1;
+}
+
+.admin-btn.btn-cancelar:hover {
+  background: #ccc;
+}
+
+.admin-btn.btn-confirmar-eliminar {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  flex: 1;
+}
+
+.admin-btn.btn-confirmar-eliminar:hover {
+  filter: brightness(1.1);
+}
+
+/* ================================================
+   Formulario de Edición de Usuario
+   ================================================ */
+
+.admin-form-wrapper {
+  padding: 0 15px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.admin-alerta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  animation: alertaIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes alertaIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.admin-alerta i { font-size: 1.3rem; flex-shrink: 0; }
+.admin-alerta-ok {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+.admin-alerta-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.admin-form {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px 24px;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.form-grid-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-columna-principal {
+  order: 2;
+}
+
+.form-columna-lateral {
+  order: 1;
+  background: #f8fafc;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.admin-form-grupo {
+  margin-bottom: 24px;
+}
+.admin-form-grupo:last-child {
+  margin-bottom: 0;
+}
+
+.admin-form-grupo label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+}
+
+.admin-form-grupo label small {
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #94a3b8;
+  font-size: 0.78rem;
+}
+
+.admin-form-grupo input[type="text"],
+.admin-form-grupo input[type="email"],
+.admin-form-grupo input[type="password"],
+.admin-form-grupo select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #1e293b;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.admin-form-grupo input:focus,
+.admin-form-grupo select:focus {
+  outline: none;
+  border-color: #00c9a7;
+  box-shadow: 0 0 0 4px rgba(0, 201, 167, 0.15);
+  background: #ffffff;
+}
+
+.admin-form-grupo select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
+  padding-right: 40px;
+}
+
+.input-con-icono {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-con-icono i {
+  position: absolute;
+  left: 16px;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+.input-con-icono input {
+  padding-left: 44px !important;
+}
+
+/* Tarjeta de información del usuario */
+.usuario-info-card {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.info-item i {
+  font-size: 1rem;
+  color: #00c9a7;
+  width: 20px;
+  text-align: center;
+}
+
+.info-item strong {
+  color: #1e293b;
+}
+
+.admin-form-acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #f1f5f9;
+}
+
+.admin-form-acciones .admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.admin-form-acciones .btn-usuarios {
+  background: linear-gradient(135deg, #00c9a7, #00897b);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 201, 167, 0.3);
+}
+.admin-form-acciones .btn-usuarios:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 16px rgba(0, 201, 167, 0.4);
+  transform: translateY(-2px);
+}
+
+.admin-form-acciones .btn-cancelar {
+  background: #f1f5f9;
+  color: #475569;
+}
+.admin-form-acciones .btn-cancelar:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/* ================================================
+   Vista Tablet
+   ================================================ */
+@media screen and (min-width: 768px) {
+  .admin-tabla-wrapper {
+    padding: 0 25px 50px;
+  }
+
+  .admin-tabla-top {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .admin-tabla th {
+    padding: 16px 18px;
+  }
+
+  .admin-tabla td {
+    padding: 14px 18px;
+  }
+
+  .admin-form-acciones {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+/* ================================================
+   Vista Escritorio
+   ================================================ */
+@media screen and (min-width: 1024px) {
+  .admin-tabla-wrapper {
+    padding: 0 40px 60px;
+  }
+
+  .admin-tabla {
+    font-size: 0.95rem;
+  }
+
+  .form-grid-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .form-columna-principal {
+    flex: 2;
+    min-width: 0;
+  }
+  .form-columna-lateral {
+    flex: 1;
+    min-width: 280px;
+  }
+  .admin-form {
+    padding: 40px;
+  }
+}

@@ -25,7 +25,7 @@ $paginaAdmin = basename($_SERVER['PHP_SELF']);
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_index.css">
     <?php elseif ($paginaAdmin == 'productos.php'): ?>
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_productos.css">
-    <?php elseif ($paginaAdmin == 'usuarios.php'): ?>
+    <?php elseif ($paginaAdmin == 'usuarios.php' || $paginaAdmin == 'editar_usuario.php'): ?>
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_usuarios.css">
     <?php elseif ($paginaAdmin == 'editar_producto.php'): ?>
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_editar_producto.css">
