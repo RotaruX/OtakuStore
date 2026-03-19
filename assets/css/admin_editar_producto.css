@@ -296,11 +296,11 @@
 
 .admin-form-acciones .btn-cancelar {
   background: #f1f5f9;
-  color: #475569;
+  color: #475569 !important;
 }
 .admin-form-acciones .btn-cancelar:hover {
   background: #e2e8f0;
-  color: #1e293b;
+  color: #1e293b !important;
 }
 
 @media screen and (min-width: 768px) {

@@ -27,6 +27,8 @@ $paginaAdmin = basename($_SERVER['PHP_SELF']);
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_productos.css">
     <?php elseif ($paginaAdmin == 'usuarios.php' || $paginaAdmin == 'editar_usuario.php'): ?>
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_usuarios.css">
+    <?php elseif ($paginaAdmin == 'pedidos.php' || $paginaAdmin == 'ver_pedido.php'): ?>
+        <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_pedidos.css">
     <?php elseif ($paginaAdmin == 'editar_producto.php'): ?>
         <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/admin_editar_producto.css">
     <?php elseif ($paginaAdmin == 'nuevo_producto.php'): ?>
@@ -44,6 +46,7 @@ $paginaAdmin = basename($_SERVER['PHP_SELF']);
                 <li><a href="<?= BASE_URL ?>admin/index.php" class="<?= $paginaAdmin == 'index.php' ? 'activo' : '' ?>">Panel</a></li>
                 <li><a href="<?= BASE_URL ?>admin/productos.php" class="<?= $paginaAdmin == 'productos.php' ? 'activo' : '' ?>">Productos</a></li>
                 <li><a href="<?= BASE_URL ?>admin/usuarios.php" class="<?= $paginaAdmin == 'usuarios.php' ? 'activo' : '' ?>">Usuarios</a></li>
+                <li><a href="<?= BASE_URL ?>admin/pedidos.php" class="<?= $paginaAdmin == 'pedidos.php' ? 'activo' : '' ?>">Pedidos</a></li>
             </ul>
             <section class="usuarios">
                 <a href="<?= BASE_URL ?>index.php" title="Ir a la Tienda"><i class="fa-solid fa-store"></i></a>
