@@ -181,4 +181,6 @@ require_once(__DIR__ . '/includes/header.php');
     ).init();
 </script>
 
+<script src="<?= BASE_URL ?>assets/js/efectos.js"></script>
+
 <?php require_once(__DIR__ . "/includes/footer.php"); ?>

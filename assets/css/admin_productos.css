@@ -28,6 +28,27 @@
   border-radius: 8px;
 }
 
+.admin-tabla-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-btn.btn-exportar {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: filter 0.2s, transform 0.2s;
+}
+
+.admin-btn.btn-exportar:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
 .admin-tabla-scroll {
   overflow-x: auto;
   border-radius: 12px;

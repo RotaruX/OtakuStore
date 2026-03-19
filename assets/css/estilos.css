@@ -7,6 +7,37 @@
     font-family: "Poppins", sans-serif;
 }
 
+/* Botón scroll-to-top generado por jQuery en efectos.js */
+#btnScrollTop {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 999;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: #FFD447;
+    color: #212529;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#btnScrollTop:hover {
+    background: #E6B93C;
+    transform: scale(1.1);
+}
+
+/* Fecha relativa en pedidos (generada por fecha_pedidos.js) */
+.pedido-fecha-relativa {
+    color: #999;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
 @font-face {
     font-family: "Poppins";
     src: url("../fonts/Rubik/Rubik-VariableFont_wght.ttf"); 

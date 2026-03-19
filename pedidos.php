@@ -71,7 +71,7 @@ $estadoIcono = [
                     <div class="pedido-header">
                         <div class="pedido-meta">
                             <span class="pedido-id"># <?= $pedido['id_compra'] ?></span>
-                            <span class="pedido-fecha">
+                            <span class="pedido-fecha" data-fecha="<?= date('c', strtotime($pedido['fecha_compra'])) ?>">
                                 <i class="fa-regular fa-calendar"></i> <?= $fecha ?>
                             </span>
                         </div>
@@ -132,4 +132,5 @@ $estadoIcono = [
     <?php endif; ?>
 </main>
 
+<script src="<?= BASE_URL ?>assets/js/fecha_pedidos.js"></script>
 <?php require_once(__DIR__ . "/includes/footer.php") ?>

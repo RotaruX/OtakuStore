@@ -14,6 +14,7 @@ require_once(__DIR__ . '/../config/parametros.php');
     <link rel="icon" type="image/png" href="<?= BASE_URL ?>assets/img/Logo.png">
     <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <?php
     $paginaActual = basename($_SERVER['PHP_SELF']);
     if ($paginaActual == 'index.php'): ?>

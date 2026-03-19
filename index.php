@@ -1,11 +1,19 @@
 <?php
 require_once(__DIR__ . '/config/parametros.php');
+
+$visitas = isset($_COOKIE['visitas_inicio']) ? intval($_COOKIE['visitas_inicio']) : 0;
+$visitas++;
+setcookie('visitas_inicio', $visitas, time() + 365 * 24 * 60 * 60, '/');
+
 require_once(__DIR__ . '/includes/header.php');
 ?>
 
 <main>
     <section class="carrusel">
         <div class="bienvenida">
+            <div class="contador-visitas" id="contadorVisitas">
+                <i class="fa-solid fa-eye"></i> Has visitado esta página <?= $visitas ?> <?= $visitas === 1 ? 'vez' : 'veces' ?>
+            </div>
             <h1>¡BIENVENIDO A OTAKUSTORE, TU TIENDA ONLINE DE CONFIANZA!</h1>
             <a href="<?= BASE_URL ?>tienda.php"><button class="btn">VER TIENDA</button></a>
         </div>
@@ -79,4 +87,5 @@ require_once(__DIR__ . '/includes/header.php');
     const BASE_URL = "<?= BASE_URL ?>";
 </script>
 <script src="<?= BASE_URL ?>assets/js/carrito.js"></script>
+<script src="<?= BASE_URL ?>assets/js/efectos.js"></script>
 <?php require_once(__DIR__ . "/includes/footer.php") ?>

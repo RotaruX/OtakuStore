@@ -19,9 +19,14 @@ $productos = $stmt->fetchAll();
             <p class="admin-tabla-contador">
                 <strong><?= count($productos) ?></strong> productos en total
             </p>
-            <a href="<?= BASE_URL ?>admin/nuevo_producto.php" class="admin-btn btn-productos btn-sm">
-                <i class="fa-solid fa-plus"></i> Añadir producto
-            </a>
+            <div class="admin-tabla-btns">
+                <a href="<?= BASE_URL ?>admin/exportar_productos_pdf.php" class="admin-btn btn-exportar btn-sm" target="_blank" title="Exportar listado a PDF">
+                    <i class="fa-solid fa-file-pdf"></i> Exportar PDF
+                </a>
+                <a href="<?= BASE_URL ?>admin/nuevo_producto.php" class="admin-btn btn-productos btn-sm">
+                    <i class="fa-solid fa-plus"></i> Añadir producto
+                </a>
+            </div>
         </div>
 
         <div class="admin-tabla-scroll">
