@@ -108,7 +108,7 @@
   outline: none;
   padding: 10px 15px;
   font-size: 0.95rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Nunito", sans-serif;
   background: transparent;
 }
 
@@ -279,7 +279,7 @@
 }
 
 .tienda-sin-resultados h2 {
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   margin-bottom: 10px;
   color: #555;
 }

@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 /* Botón scroll-to-top generado por jQuery en efectos.js */
@@ -39,12 +39,14 @@
 }
 
 @font-face {
-    font-family: "Poppins";
-    src: url("../fonts/Rubik/Rubik-VariableFont_wght.ttf"); 
+    font-family: "Nunito";
+    src: url("../fonts/Nunito/Nunito-VariableFont_wght.ttf");
+    font-weight: 200 1000;
+    font-style: normal;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 header {
@@ -115,6 +117,11 @@ header > a > img {
     width: 100%;
     text-align: center;
     border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.menu > ul > li > a.activo {
+    font-weight: 900;
 }
 
 .usuarios {
@@ -244,6 +251,10 @@ footer h4 {
         transition: all 0.3s ease;
     }
 
+    .menu > ul > li > a.activo {
+        font-weight: 900;
+    }
+
     .usuarios {
         width: auto;
         margin-top: 0;
@@ -260,6 +271,7 @@ footer h4 {
         color: #212529;
         transform: translateY(-2px);
     }
+
 
     .usuarios > a {
         transition: transform 0.2s;

@@ -19,7 +19,7 @@
 }
 
 .login-container h2 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   margin-bottom: 25px;
   color: #212529;
   text-transform: uppercase;
@@ -154,7 +154,7 @@
   }
 
   .login-container h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 }
 
@@ -176,7 +176,7 @@
   }
 
   .login-container h2 {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
   }
 
   .campo input {
