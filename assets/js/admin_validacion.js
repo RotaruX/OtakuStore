@@ -1,11 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Detectar formulario admin activo
   const formNuevo = document.querySelector(".caja-formulario");
   const formEditar = document.querySelector(".admin-form");
   const form = formNuevo || formEditar;
   if (!form) return;
-
-  // Detectar página
   const pagina = location.pathname;
   const esNuevoProducto = pagina.includes("nuevo_producto");
   const esEditarProducto = pagina.includes("editar_producto");
@@ -25,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!valido) {
       e.preventDefault();
-      // Scroll al primer error
       const primerError = form.querySelector(".input-error-admin, .archivo-error-admin");
       if (primerError) {
         primerError.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -167,7 +163,6 @@ document.addEventListener("DOMContentLoaded", function () {
     span.className = "campo-error-admin";
     span.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> ' + mensaje;
 
-    // Insertar después del contenedor padre adecuado
     const padre = input.closest(".entrada-con-icono") || input.closest(".input-con-icono") || input;
     padre.parentElement.appendChild(span);
   }
@@ -177,7 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
     span.className = "campo-error-admin archivo-error-admin";
     span.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> ' + mensaje;
 
-    // Insertar en el grupo-campo / admin-form-grupo que contiene el file input
     const grupo = fileInput.closest(".grupo-campo") || fileInput.closest(".admin-form-grupo");
     if (grupo) {
       grupo.appendChild(span);
@@ -205,7 +199,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Limpiar error de archivo al seleccionar nuevo archivo
   const fileInput = document.getElementById("imagen_archivo");
   if (fileInput) {
     fileInput.addEventListener("change", function () {
