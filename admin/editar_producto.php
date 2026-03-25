@@ -189,6 +189,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 </main>
 
+<script src="<?= BASE_URL ?>assets/js/admin_validacion.js"></script>
 <script>
 function previewFile() {
     const preview = document.getElementById('previewImg');
