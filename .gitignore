@@ -11,6 +11,7 @@ desktop.ini
 *.log
 *.tmp
 *.sql
+!includes/otakustore.sql
 
 # --- Recursos subidos por usuarios ---
 # Es mejor no subir las fotos que vayas probando en local
