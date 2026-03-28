@@ -1,0 +1,235 @@
+/* Vista móvil */
+
+.legal-body {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #FAFAFA;
+    color: #212529;
+}
+
+.legal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #FFD447;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.legal-header a img {
+    width: 140px;
+    transition: transform 0.3s;
+}
+
+.legal-hero {
+    background: linear-gradient(135deg, #FFD447 0%, #FFE587 100%);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.legal-hero h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #212529;
+    margin-bottom: 8px;
+}
+
+.legal-hero p {
+    font-size: 1rem;
+    color: #3a3a3a;
+    font-weight: 600;
+}
+
+.legal-content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 30px 20px 50px;
+}
+
+.legal-content h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #212529;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 3px solid #FFD447;
+    display: inline-block;
+}
+
+.legal-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.legal-content p {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #444;
+    margin-bottom: 14px;
+}
+
+.legal-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 14px;
+}
+
+.legal-content ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #444;
+}
+
+.legal-content ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #FFD447;
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.legal-content a {
+    color: #c8961e;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.legal-content a:hover {
+    color: #a57a10;
+    text-decoration: underline;
+}
+
+.legal-content strong {
+    color: #212529;
+}
+
+.legal-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 2px solid #eee;
+}
+
+.legal-nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 2px solid #FFD447;
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #212529;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.legal-nav a:hover {
+    background: #FFD447;
+    color: #212529;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.legal-footer {
+    background-color: #FFD447;
+    color: #212529;
+    text-align: center;
+    padding: 25px 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.legal-footer a {
+    color: #212529;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.legal-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Vista tablet */
+@media screen and (min-width: 768px) {
+
+    .legal-hero {
+        padding: 60px 40px;
+    }
+
+    .legal-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .legal-hero p {
+        font-size: 1.1rem;
+    }
+
+    .legal-content {
+        padding: 40px 40px 60px;
+    }
+
+    .legal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .legal-nav {
+        flex-direction: row;
+    }
+
+    .legal-nav a {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+/* Vista escritorio */
+@media screen and (min-width: 1024px) {
+
+    .legal-header a img {
+        width: 200px;
+    }
+
+    .legal-header a img:hover {
+        transform: scale(1.1);
+    }
+
+    .legal-hero {
+        padding: 70px 40px;
+    }
+
+    .legal-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .legal-content {
+        padding: 50px 20px 70px;
+    }
+
+    .legal-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .legal-content p,
+    .legal-content ul li {
+        font-size: 1rem;
+    }
+}
