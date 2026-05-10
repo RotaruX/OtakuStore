@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFD447;
+            --primary-hover: #E6B93C;
+            --bg-dark: #1a1a2e;
+            --bg-card: #16213e;
+            --bg-body: #0f0f23;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --text-heading: #ffffff;
+            --border-color: #2a2a4a;
+            --code-bg: #1e1e3a;
+            --success: #27ae60;
+            --danger: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--bg-body);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ── Header hero ── */
+        .page-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 3rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,212,71,0.05) 0%, transparent 70%);
+            animation: float 15s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(5deg); }
+            66% { transform: translate(-20px, 20px) rotate(-3deg); }
+        }
+
+        .page-header h1,
+        .project-name {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-shadow: 0 0 30px rgba(255,212,71,0.3);
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header h2,
+        .project-tagline {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            position: relative;
+        }
+
+        /* ── Main Content ── */
+        .main-content {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ── Headings ── */
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin: 2rem 0 0.8rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 1.5rem 0 0.6rem;
+        }
+
+        h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        /* ── Links ── */
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s, text-shadow 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+            text-shadow: 0 0 8px rgba(255,212,71,0.4);
+        }
+
+        /* ── Paragraphs & Lists ── */
+        p { margin: 0.8rem 0; }
+
+        ul, ol {
+            margin: 0.8rem 0 0.8rem 1.5rem;
+        }
+
+        li {
+            margin: 0.3rem 0;
+        }
+
+        /* ── Tables ── */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            background: var(--bg-card);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--bg-dark), #1e2a4a);
+            color: var(--primary);
+            font-weight: 700;
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover td {
+            background: rgba(255,212,71,0.05);
+        }
+
+        /* ── Code Blocks ── */
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.88em;
+            background: var(--code-bg);
+            color: #e8d44d;
+            padding: 0.15em 0.4em;
+            border-radius: 4px;
+        }
+
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.2rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: #d4d4d4;
+        }
+
+        /* ── Blockquotes ── */
+        blockquote {
+            border-left: 4px solid var(--primary);
+            background: rgba(255,212,71,0.08);
+            padding: 0.8rem 1.2rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+            color: var(--text-secondary);
+        }
+
+        blockquote strong {
+            color: var(--primary);
+        }
+
+        /* ── Images ── */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .main-content > div[align="center"] img {
+            margin: 0 auto;
+        }
+
+        /* ── Horizontal Rules ── */
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary), transparent);
+            margin: 2.5rem 0;
+        }
+
+        /* ── Badge Images ── */
+        img[src*="shields.io"] {
+            display: inline-block;
+            margin: 0.2rem 0.1rem;
+        }
+
+        /* ── Mermaid ── */
+        .mermaid {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        /* ── Strong / Bold ── */
+        strong {
+            color: var(--text-heading);
+            font-weight: 700;
+        }
+
+        /* ── Scroll to top ── */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary);
+            color: var(--bg-body);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255,212,71,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,212,71,0.6);
+        }
+
+        /* ── Footer ── */
+        .site-footer {
+            background: var(--bg-dark);
+            border-top: 3px solid var(--primary);
+            padding: 2rem 1rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .site-footer a {
+            color: var(--primary);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .page-header h1, .project-name { font-size: 2rem; }
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            .main-content { padding: 1.5rem 1rem 3rem; }
+            table { font-size: 0.85rem; }
+            th, td { padding: 0.5rem 0.6rem; }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1, .project-name { font-size: 1.6rem; }
+            .page-header { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="page-header">
+        <h1 class="project-name">{{ site.title | default: "OtakuStore" }}</h1>
+        <h2 class="project-tagline">{{ site.description | default: "Tu tienda online de confianza para manga y anime" }}</h2>
+    </header>
+
+    <main class="main-content">
+        {{ content }}
+    </main>
+
+    <a href="#" class="scroll-top" id="scrollTop">↑</a>
+
+    <footer class="site-footer">
+        <p>© 2026 <strong>OtakuStore</strong> — Tu tienda otaku de confianza</p>
+        <p><a href="https://github.com/RotaruX/OtakuStore">Ver en GitHub</a></p>
+    </footer>
+
+    <!-- Mermaid JS for diagram rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                primaryColor: '#FFD447',
+                primaryTextColor: '#1a1a2e',
+                primaryBorderColor: '#E6B93C',
+                lineColor: '#FFD447',
+                secondaryColor: '#16213e',
+                tertiaryColor: '#0f3460',
+                fontFamily: 'Nunito, sans-serif'
+            }
+        });
+
+        // Convert mermaid code blocks to mermaid divs
+        document.querySelectorAll('pre code.language-mermaid').forEach(function(el) {
+            var mermaidDiv = document.createElement('div');
+            mermaidDiv.className = 'mermaid';
+            mermaidDiv.textContent = el.textContent;
+            el.parentElement.replaceWith(mermaidDiv);
+        });
+
+        // Re-render mermaid after DOM changes
+        mermaid.run();
+
+        // Scroll to top button
+        var scrollBtn = document.getElementById('scrollTop');
+        window.addEventListener('scroll', function() {
+            scrollBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+        scrollBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

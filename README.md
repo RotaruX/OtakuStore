@@ -1,3 +1,8 @@
+---
+layout: default
+title: "OtakuStore | Proyecto de fin de grado DAW"
+---
+
 <div align="center">
 
 <!-- Banner principal -->

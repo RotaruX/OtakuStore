@@ -1,0 +1,9 @@
+title: "OtakuStore | Proyecto de fin de grado DAW"
+description: "Tu tienda online de confianza para manga y anime"
+theme: jekyll-theme-cayman
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  parse_block_html: true
+  syntax_highlighter: rouge
